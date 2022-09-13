@@ -1,0 +1,88 @@
+@import '@/styles/global';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  max-width: 36rem;
+  width: 99%;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 2rem;
+}
+
+.createDate {
+  color: gray;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 2rem 1rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1rem;
+  }
+
+  code {
+    background-color: lightgray;
+    color: $color-font-light;
+
+    border-radius: 5px;
+
+    padding: 0 0.2rem;
+
+    font-family: monospace;
+  }
+
+  strong {
+    color: $color-brand-secondary;
+
+    font-weight: 900;
+  }
+
+  em {
+    color: gray;
+
+    font-style: italic;
+  }
+
+  a {
+    color: gray;
+  }
+}
+
+.navigator {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 1rem;
+
+  font-family: 'HSBombaram', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+
+  div {
+    cursor: pointer;
+  }
+}

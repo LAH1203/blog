@@ -1,0 +1,47 @@
+@import '@/styles/global';
+
+.container {
+  display: flex;
+  gap: 2rem;
+
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.photo {
+  max-width: 8rem;
+  min-width: 4rem;
+  width: 30vw;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  height: 80%;
+
+  padding: 1.5rem 0;
+}
+
+.link {
+  color: $color-brand-secondary;
+
+  &:hover {
+    text-shadow: 0 0 1px $color-shadow;
+  }
+}
