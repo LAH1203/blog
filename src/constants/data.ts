@@ -1,3 +1,3 @@
-const postsLength = 2;
+const postsLength = 3;
 
 export { postsLength };
