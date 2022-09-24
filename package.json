@@ -1,8 +1,8 @@
 {
-  "name": "my_blog",
+  "name": "blog",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/LAH1203/LAH1203.github.io.git",
+  "repository": "https://github.com/LAH1203/blog.git",
   "author": "이아현 <lah1203@naver.com>",
   "license": "MIT",
   "scripts": {
@@ -41,7 +41,6 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "^2.7.1",
-    "raw-loader": "^4.0.2",
     "sass": "^1.54.8",
     "sass-loader": "^13.0.2",
     "sitemap-webpack-plugin": "^1.1.1",

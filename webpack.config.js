@@ -12,7 +12,7 @@ module.exports = {
   entry: path.resolve(__dirname, './src/index.tsx'),
   module: {
     rules: [
-      { test: /\.md$/, use: 'raw-loader' },
+      { test: /\.md$/, type: 'asset/source' },
       {
         test: /\.tsx?$/i,
         use: 'ts-loader',
