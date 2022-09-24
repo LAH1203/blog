@@ -4,12 +4,15 @@ import { Post } from '@/types/data';
 const parsePost = (id: Post['id'], post: string) => {
   const [, description, ...postContent] = post.split('---');
   const [, title, createDate] = description.replaceAll('---', '').split('\n');
+  const content = postContent
+    .join('---')
+    .replaceAll('<br />', '\n\n&nbsp;\n\n');
 
   return {
     id,
     title: title.replace('title: ', ''),
     createDate: createDate.replace('createDate: ', ''),
-    content: postContent.join('---'),
+    content,
   };
 };
 
