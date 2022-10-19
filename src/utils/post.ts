@@ -5,6 +5,10 @@ const parsePost = (id: Post['id'], post: string) => {
   const [, description, ...postContent] = post.split('<hr>');
   const [, title, date] = description.replaceAll('<hr>', '').split('\n');
 
+  console.log('post: ', post);
+  console.log(description, postContent);
+  console.log(title, date);
+
   return {
     id,
     title: title.replace('<p>title: ', ''),
