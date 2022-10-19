@@ -1,4 +1,4 @@
-@import '@/styles/global';
+@import '@/styles/variables';
 
 .layout {
   width: 100%;
@@ -21,7 +21,7 @@
   min-height: 100%;
 
   box-sizing: border-box;
-  padding: 7rem 0 3rem;
+  padding: 5rem 0 3rem;
 
   background-color: $color-background-light;
   color: $color-font-light;

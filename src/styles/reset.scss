@@ -1,4 +1,4 @@
-@import './font.scss', 'global.scss';
+@import './font.scss', 'variables.scss';
 
 html,
 body,
@@ -101,7 +101,7 @@ section {
 body {
   line-height: 1.4rem;
 
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
   font-size: 1rem;
 
   text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
@@ -139,9 +139,10 @@ a {
   text-decoration: none;
 }
 hr {
-  width: 100%;
+  width: 97%;
 
-  border: 0.2px solid $color-brand-primary;
+  border: 4px solid $color-point-pink;
+  border-radius: 5px;
 }
 blockquote,
 q {

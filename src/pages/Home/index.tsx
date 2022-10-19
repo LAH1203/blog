@@ -25,14 +25,8 @@ function Home() {
     <div className={styles.container}>
       <Profile />
       <hr />
-      {posts.sort(idDesc).map(({ id, title, content, createDate }) => (
-        <WritingItem
-          id={id}
-          title={title}
-          content={content}
-          createDate={createDate}
-          key={id}
-        />
+      {posts.sort(idDesc).map(({ id, title, date }) => (
+        <WritingItem id={id} title={title} date={date} key={id} />
       ))}
     </div>
   );

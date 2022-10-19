@@ -1,21 +1,27 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 
+const hljs = require('highlight.js');
 const path = require('path');
 
-const paths = ['/', '/post/1', '/post/2'];
+const paths = ['/', '/post/1', '/post/2', '/post/3'];
 
 module.exports = {
   mode: 'development',
   entry: path.resolve(__dirname, './src/index.tsx'),
   module: {
     rules: [
-      { test: /\.md$/, type: 'asset/source' },
       {
         test: /\.tsx?$/i,
-        use: 'ts-loader',
+        use: {
+          loader: 'esbuild-loader',
+          options: {
+            loader: 'tsx',
+            target: 'es2015',
+          },
+        },
+
         exclude: /node_modules/,
       },
       {
@@ -41,6 +47,25 @@ module.exports = {
         test: /\.svg$/i,
         use: ['file-loader'],
       },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              // See https://marked.js.org/using_advanced#options
+              highlight: (code, lang) => {
+                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+
+                return hljs.highlight(code, { language }).value;
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -56,9 +81,9 @@ module.exports = {
     clean: true,
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      favicon: './public/favicon.png',
     }),
     new MiniCssExtractPlugin(),
     new SitemapPlugin({

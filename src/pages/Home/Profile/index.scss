@@ -1,5 +1,3 @@
-@import '@/styles/global';
-
 .container {
   display: flex;
   gap: 2rem;
@@ -16,6 +14,10 @@
 
   font-size: 1.1rem;
   font-weight: 700;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 .photo {
@@ -38,10 +40,6 @@
   padding: 1.5rem 0;
 }
 
-.link {
-  color: $color-brand-secondary;
-
-  &:hover {
-    text-shadow: 0 0 1px $color-shadow;
-  }
+.github {
+  width: 2rem;
 }

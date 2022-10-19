@@ -1,4 +1,4 @@
-@import '@/styles/global';
+@import '@/styles/variables';
 
 .container {
   display: flex;
@@ -12,21 +12,21 @@
   box-sizing: border-box;
   padding: 0 1rem;
 
-  background-color: $color-brand-primary;
+  background: linear-gradient(
+    90deg,
+    #12c2e9cc 0%,
+    #c471edcc 50%,
+    #f64f59cc 100%
+  );
+
+  backdrop-filter: saturate(150%) blur(5px);
 }
 
 .logo {
-  font-family: 'HSBombaram', sans-serif;
-  color: whitesmoke;
-
-  font-size: 1.5rem;
+  width: 30px;
+  aspect-ratio: 1 / 1;
 
   cursor: pointer;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .toggle {
@@ -40,9 +40,9 @@
   box-sizing: border-box;
   padding: 0 0.5rem;
 
-  background-color: $color-translucent-white;
+  background-color: $color-shadow;
 
-  border: 1px solid #ba9ada;
+  border: 1px solid $color-point-pink;
   border-radius: 30px;
 
   transition: all 0.3s ease;
@@ -50,6 +50,6 @@
   cursor: pointer;
 
   &.darkMode {
-    background-color: #ba9ada;
+    background-color: $color-point-pink;
   }
 }

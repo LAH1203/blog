@@ -1,4 +1,4 @@
-@import '@/styles/global';
+@import '@/styles/variables';
 
 .container {
   display: flex;
@@ -11,21 +11,26 @@
 
 .postHeader {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 3rem;
-
-  padding: 0 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .title {
   font-size: 1.5rem;
   font-weight: 900;
   line-height: 2rem;
+
+  padding: 0 1rem;
 }
 
-.createDate {
+.date {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
   color: gray;
+
+  padding: 0 1rem;
 }
 
 .content {
@@ -44,6 +49,20 @@
     margin-top: 1rem;
   }
 
+  pre {
+    overflow-x: scroll;
+
+    background-color: #eee;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+
+    code {
+      background: none;
+    }
+  }
+
   code {
     background-color: lightgray;
     color: $color-font-light;
@@ -52,7 +71,7 @@
 
     padding: 0 0.2rem;
 
-    font-family: monospace;
+    font-family: 'Noto Sans KR', monospace, sans-serif;
   }
 
   strong {

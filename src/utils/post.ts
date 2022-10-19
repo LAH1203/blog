@@ -2,17 +2,14 @@ import { postsLength } from '@/constants/data';
 import { Post } from '@/types/data';
 
 const parsePost = (id: Post['id'], post: string) => {
-  const [, description, ...postContent] = post.split('---');
-  const [, title, createDate] = description.replaceAll('---', '').split('\n');
-  const content = postContent
-    .join('---')
-    .replaceAll('<br />', '\n\n&nbsp;\n\n');
+  const [, description, ...postContent] = post.split('<hr>');
+  const [, title, date] = description.replaceAll('<hr>', '').split('\n');
 
   return {
     id,
-    title: title.replace('title: ', ''),
-    createDate: createDate.replace('createDate: ', ''),
-    content,
+    title: title.replace('<p>title: ', ''),
+    date: date.replace('date: ', '').replace('</p>', ''),
+    content: postContent.join('<hr>'),
   };
 };
 
