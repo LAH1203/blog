@@ -136,9 +136,16 @@ h4 {
   line-height: 2.2rem;
 }
 a {
-  color: $color-point-ocean;
+  width: fit-content;
 
+  color: $color-brand-secondary;
   text-decoration: none;
+
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: $color-point-ocean;
+  }
 }
 hr {
   width: 97%;
@@ -160,4 +167,14 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+ul {
+  margin: 0;
+}
+details {
+  width: fit-content;
+
+  summary {
+    cursor: pointer;
+  }
 }

@@ -1,0 +1,47 @@
+@import '@/styles/variables';
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    font-size: 0.9rem;
+  }
+}
+
+.title {
+  width: fit-content;
+  line-height: 0.2rem;
+
+  border-bottom: 0.7rem solid $color-point-skyblue;
+
+  font-size: 1.1rem;
+}
+
+.subtitle {
+  line-height: 1.4rem;
+
+  font-size: 1rem;
+}
+
+.duration {
+  color: gray;
+
+  font-size: 0.9rem;
+}
+
+.link-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.details {
+  margin-top: 1rem;
+}
