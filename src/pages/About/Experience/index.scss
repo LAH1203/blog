@@ -1,6 +1,26 @@
 @import '@/styles/variables';
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1%;
+
+  white-space: nowrap;
+}
+
+.content-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   row-gap: 2rem;
@@ -19,7 +39,7 @@
   }
 }
 
-.header {
+.content-left {
   display: flex;
   flex-direction: column;
 

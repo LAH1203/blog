@@ -1,7 +1,6 @@
 import Profile from './Profile';
 import Introduce from './Introduce';
 import Experience from './Experience';
-import Skill from './Skill';
 import Education from './Education';
 
 import styles from './index.scss';
@@ -15,7 +14,6 @@ function About() {
       <Profile />
       <Introduce />
       <Experience />
-      <Skill />
       <Education />
     </div>
   );

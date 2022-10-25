@@ -3,7 +3,7 @@ import sharedStyles from '../@shared/index.scss';
 function Introduce() {
   return (
     <section className={sharedStyles.section}>
-      <h2 className={sharedStyles.subtitle}>💻 Introduce</h2>
+      <h2 className={sharedStyles.subtitle}>Introduce</h2>
       <p>
         새로운 기술을 공부하는 것을 좋아하는, 그리고 내가 만든 결과물로 인해
         행복해지는 사람들이 많아지기를 바라는 개발자예요.

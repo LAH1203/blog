@@ -3,13 +3,12 @@
 .section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 }
 
 .subtitle {
-  color: $color-point-hotpink;
-
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .important {

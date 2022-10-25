@@ -8,7 +8,7 @@ function Profile() {
     <section className={styles.profile}>
       <img src={me} className={styles.image} />
       <div className={sharedStyles.section}>
-        <h2 className={sharedStyles.subtitle}>📞 Contact</h2>
+        <h2 className={sharedStyles.subtitle}>Contact</h2>
         <div className={styles.table}>
           <p className={styles.contact}>Email</p>
           <p>lah1203@naver.com</p>
