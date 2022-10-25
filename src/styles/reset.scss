@@ -110,6 +110,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
+
+  ::selection {
+    background-color: $color-point-purpleBlue;
+    color: white;
+  }
 }
 h1,
 h2,
@@ -170,6 +175,9 @@ table {
 }
 ul {
   margin: 0;
+  padding-left: 1rem;
+
+  list-style-type: square;
 }
 details {
   width: fit-content;

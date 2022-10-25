@@ -4,6 +4,19 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   row-gap: 2rem;
+
+  ul {
+    padding-left: 3rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      padding-left: 1rem;
+    }
+  }
 }
 
 .header {

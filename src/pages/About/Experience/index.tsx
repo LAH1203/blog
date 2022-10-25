@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import sharedStyles from '../@shared/index.scss';
 import styles from './index.scss';
 
@@ -68,9 +70,8 @@ const experiences = {
         'react query와 recoil을 사용한 클라이언트와 서버 데이터의 분리',
         'esbuild-loader와 fork-ts-checker-webpack-plugin을 통해 로더 및 타입 체킹 설정',
         '\n',
-        'PC, 태블릿, 모바일 등 모든 기기 대응',
-        'Date 객체만을 사용한 캘린더 제작',
-        '이벤트 리스너를 통한 이미지 드롭존 제작',
+        'PC, 태블릿, 모바일 등 반응형 UI 적용',
+        '캘린더, 이미지 드롭존 제작',
         '그 외 다양한 페이지, 컴포넌트 등의 제작 및 리팩토링 진행',
       ],
     },
@@ -108,7 +109,7 @@ function Experience() {
       <div className={styles.duration}>(2022.02 - 2022.11)</div>
       <div className={styles.container}>
         {experiences.wooteco.map(experience => (
-          <>
+          <Fragment key={experience.title}>
             <div className={styles.header}>
               <h4 className={styles.subtitle}>👣 {experience.title}</h4>
               {experience.duration && (
@@ -116,7 +117,7 @@ function Experience() {
               )}
               <div className={styles['link-box']}>
                 {experience.links.map(link => (
-                  <a href={link.href} target="_blank">
+                  <a href={link.href} target="_blank" key={link.title}>
                     {link.title}
                   </a>
                 ))}
@@ -125,17 +126,21 @@ function Experience() {
                 <details className={styles.details}>
                   <summary>기술 스택</summary>
                   {experience.stacks.map(stack => (
-                    <p>{stack}</p>
+                    <p key={stack}>{stack}</p>
                   ))}
                 </details>
               )}
             </div>
             <ul>
-              {experience.descriptions.map(description => {
-                return description === '\n' ? <br /> : <li>{description}</li>;
+              {experience.descriptions.map((description, idx) => {
+                return description === '\n' ? (
+                  <br key={idx} />
+                ) : (
+                  <li key={idx}>{description}</li>
+                );
               })}
             </ul>
-          </>
+          </Fragment>
         ))}
       </div>
     </section>

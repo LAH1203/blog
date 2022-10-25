@@ -5,7 +5,7 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const hljs = require('highlight.js');
 const path = require('path');
 
-const paths = ['/', '/about', '/post/1', '/post/2', '/post/3'];
+const paths = ['/', '/post/1', '/post/2', '/post/3'];
 
 module.exports = {
   mode: 'development',
