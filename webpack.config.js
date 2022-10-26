@@ -13,6 +13,7 @@ const paths = [
   '/post/4',
   '/post/5',
   '/post/6',
+  '/post/7',
 ];
 
 module.exports = {
