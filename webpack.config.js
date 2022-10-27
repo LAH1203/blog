@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 const hljs = require('highlight.js');
 const path = require('path');
@@ -14,6 +15,7 @@ const paths = [
   '/post/5',
   '/post/6',
   '/post/7',
+  '/post/8',
 ];
 
 module.exports = {
@@ -27,7 +29,7 @@ module.exports = {
           loader: 'esbuild-loader',
           options: {
             loader: 'tsx',
-            target: 'es2015',
+            target: 'esnext',
           },
         },
 
@@ -49,12 +51,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.jpe?g|png|mp4$/i,
+        test: /\.jpe?g|png|mp4|svg$/i,
         type: 'asset/resource',
-      },
-      {
-        test: /\.svg$/i,
-        use: ['file-loader'],
       },
       {
         test: /\.md$/,
@@ -82,6 +80,14 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
+  },
+  optimization: {
+    minimizer: [
+      new ESBuildMinifyPlugin({
+        target: 'esnext',
+        css: true,
+      }),
+    ],
   },
   output: {
     path: path.resolve(__dirname, './dist'),

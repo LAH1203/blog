@@ -58,6 +58,10 @@
     border-radius: 12px;
     padding: 1rem;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     code {
       background: none;
     }
@@ -75,7 +79,7 @@
   }
 
   strong {
-    color: $color-brand-secondary;
+    color: $color-point-purpleBlue;
 
     font-weight: 900;
   }
