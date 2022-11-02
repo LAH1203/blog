@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 import sharedStyles from '../@shared/index.scss';
 import styles from './index.scss';
 

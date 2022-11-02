@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import styles from './index.scss';
-
 import Logo from '@/assets/star.png';
 import Moon from '@/components/svg/Moon';
 import Sun from '@/components/svg/Sun';
 import { modeState } from '@/recoil/condition';
+
+import styles from './index.scss';
 
 function Header() {
   const [mode, setMode] = useRecoilState(modeState);

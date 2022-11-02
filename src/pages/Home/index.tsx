@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import styles from './index.scss';
 import Profile from './Profile';
 import WritingItem from './WritingItem';
 
 import { Post } from '@/types/data';
 import { idDesc } from '@/utils/compare';
 import { getAllPosts } from '@/utils/post';
+
+import styles from './index.scss';
 
 function Home() {
   const [posts, setPosts] = useState<Post[]>([]);

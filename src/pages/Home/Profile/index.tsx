@@ -1,8 +1,9 @@
-import styles from './index.scss';
+import { Link } from 'react-router-dom';
 
 import github from '@/assets/github.svg';
 import profileVideo from '@/assets/profile.mp4';
-import { Link } from 'react-router-dom';
+
+import styles from './index.scss';
 
 function Profile() {
   return (
