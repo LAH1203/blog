@@ -33,7 +33,7 @@ function Blog() {
         <div className={styles.title}>{title}</div>
         <hr />
         <div className={styles.date}>
-          <img src={calendar} />
+          <img src={calendar} alt="달력 이모지" />
           {date}
         </div>
       </div>
