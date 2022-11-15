@@ -99,7 +99,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1.4rem;
+  line-height: 2rem;
 
   font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
   font-size: 1rem;
@@ -112,7 +112,7 @@ body {
   text-rendering: optimizelegibility;
 
   ::selection {
-    background-color: $color-point-purpleBlue;
+    background-color: $color-point-ocean;
     color: white;
   }
 }
@@ -154,9 +154,6 @@ a {
 }
 hr {
   width: 97%;
-
-  border: 4px solid $color-point-pink;
-  border-radius: 5px;
 }
 blockquote,
 q {

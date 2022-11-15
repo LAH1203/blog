@@ -17,12 +17,9 @@ function Header() {
       <Link to="/">
         <img className={styles.logo} src={Logo} alt="로고" />
       </Link>
-      <div
-        className={`${styles.toggle} ${mode === 'dark' ? styles.darkMode : ''}`}
-        onClick={toggleMode}
-      >
-        <Sun width="1rem" color={mode === 'light' ? '#FFAFBD' : 'none'} />
-        <Moon width="1rem" color={mode === 'dark' ? '#FFFFFF' : 'none'} />
+      <div className={styles.toggle} onClick={toggleMode}>
+        <Sun width="1rem" color={mode === 'dark' ? 'none' : '#FFAFBD'} />
+        <Moon width="1rem" color={mode === 'dark' ? '#FFAFBD' : 'none'} />
       </div>
     </div>
   );

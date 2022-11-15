@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import github from '@/assets/github.svg';
 import profileVideo from '@/assets/profile.mp4';
 
@@ -9,11 +7,9 @@ function Profile() {
   return (
     <div className={styles.container}>
       <div className={styles.profile}>
-        <Link to="/about">
-          <video className={styles.photo} autoPlay loop muted playsInline>
-            <source src={profileVideo} type="video/mp4" />
-          </video>
-        </Link>
+        <video className={styles.photo} autoPlay loop muted playsInline>
+          <source src={profileVideo} type="video/mp4" />
+        </video>
         <div>이아현</div>
       </div>
       <div className={styles.description}>

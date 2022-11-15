@@ -1,0 +1,14 @@
+.navigator {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 1rem;
+
+  font-family: 'HSBombaram', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+
+  div {
+    cursor: pointer;
+  }
+}

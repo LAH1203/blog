@@ -9,34 +9,6 @@
   width: 99%;
 }
 
-.postHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.title {
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 2rem;
-
-  padding: 0 1rem;
-}
-
-.date {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-
-  color: gray;
-
-  padding: 0 1rem;
-
-  img {
-    width: 1rem;
-  }
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -55,6 +27,8 @@
 
   pre {
     overflow-x: scroll;
+
+    line-height: 1.5rem;
 
     background-color: #eee;
 
@@ -92,20 +66,5 @@
     color: gray;
 
     font-style: italic;
-  }
-}
-
-.navigator {
-  display: flex;
-  justify-content: space-between;
-
-  padding: 0 1rem;
-
-  font-family: 'HSBombaram', sans-serif;
-  font-weight: 700;
-  font-size: 0.9rem;
-
-  div {
-    cursor: pointer;
   }
 }

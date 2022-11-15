@@ -13,11 +13,7 @@
   cursor: pointer;
 
   &:hover > .title {
-    background: linear-gradient(
-      150deg,
-      $color-point-hotpink 0%,
-      $color-point-ocean 100%
-    );
+    background-color: $color-point-ocean;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -25,8 +21,6 @@
 }
 
 .title {
-  height: 1.5rem;
-
   font-size: 1.5rem;
   font-weight: 900;
 }
