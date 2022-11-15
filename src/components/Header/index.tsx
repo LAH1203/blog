@@ -1,27 +1,16 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
 
 import Logo from '@/assets/star.png';
 import Moon from '@/components/svg/Moon';
 import Sun from '@/components/svg/Sun';
-import { modeState } from '@/recoil/condition';
+
+import { ModeContext } from '@/contexts';
 
 import styles from './index.scss';
 
 function Header() {
-  const [mode, setMode] = useRecoilState(modeState);
-
-  const toggleMode = () => {
-    setMode(prevMode => {
-      if (prevMode === 'light') {
-        localStorage.setItem('mode', 'dark');
-        return 'dark';
-      }
-
-      localStorage.setItem('mode', 'light');
-      return 'light';
-    });
-  };
+  const { mode, toggleMode } = useContext(ModeContext);
 
   return (
     <div className={styles.container}>

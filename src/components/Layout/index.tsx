@@ -1,16 +1,17 @@
-import { useRecoilValue } from 'recoil';
-
-import styles from './index.scss';
+import { useContext } from 'react';
 
 import Header from '@/components/Header';
-import { modeState } from '@/recoil/condition';
+
+import { ModeContext } from '@/contexts';
+
+import styles from './index.scss';
 
 interface LayoutProps {
   children: React.ReactElement;
 }
 
 function Layout({ children }: LayoutProps) {
-  const mode = useRecoilValue(modeState);
+  const { mode } = useContext(ModeContext);
 
   return (
     <div className={styles.layout}>

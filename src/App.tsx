@@ -1,14 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { RecoilRoot } from 'recoil';
 
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Post from '@/pages/Post';
 
+import { ModeContext } from '@/contexts';
+import { useMode } from '@/hooks/useMode';
+
 function App() {
+  const { mode, toggleMode } = useMode();
+
   return (
-    <RecoilRoot>
+    <ModeContext.Provider value={{ mode, toggleMode }}>
       <Router>
         <Layout>
           <Routes>
@@ -18,7 +22,7 @@ function App() {
           </Routes>
         </Layout>
       </Router>
-    </RecoilRoot>
+    </ModeContext.Provider>
   );
 }
 

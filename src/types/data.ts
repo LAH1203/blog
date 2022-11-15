@@ -4,3 +4,5 @@ export interface Post {
   content: string;
   date: string;
 }
+
+export type Mode = 'light' | 'dark';
