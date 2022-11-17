@@ -1,17 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import calendar from '@/assets/calendar.svg';
+import { Post } from '@/types/data';
 
 import styles from './index.scss';
 
-interface WritingItemProps {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-}
-
-function WritingItem({ id, title, description, date }: WritingItemProps) {
+function WritingItem({ id, title, description, date }: Omit<Post, 'content'>) {
   const navigate = useNavigate();
 
   return (
