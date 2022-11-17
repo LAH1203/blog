@@ -7,20 +7,25 @@ import styles from './index.scss';
 interface WritingItemProps {
   id: number;
   title: string;
+  description: string;
   date: string;
 }
 
-function WritingItem({ id, title, date }: WritingItemProps) {
+function WritingItem({ id, title, description, date }: WritingItemProps) {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.container} onClick={() => navigate(`/post/${id}`)}>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.date}>
+    <section
+      className={styles.container}
+      onClick={() => navigate(`/post/${id}`)}
+    >
+      <h2 className={styles.title}>{title}</h2>
+      <p>{description}</p>
+      <p className={styles.date}>
         <img src={calendar} />
         {date}
-      </div>
-    </div>
+      </p>
+    </section>
   );
 }
 

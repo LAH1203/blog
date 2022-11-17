@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <div className={styles.container}>
-      <Link to="/">
+      <Link className={styles['logo-wrapper']} to="/">
         <img className={styles.logo} src={Logo} alt="로고" />
       </Link>
       <div className={styles.toggle} onClick={toggleMode}>

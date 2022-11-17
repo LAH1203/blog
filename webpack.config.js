@@ -6,17 +6,7 @@ const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const hljs = require('highlight.js');
 const path = require('path');
 
-const paths = [
-  '/',
-  '/post/1',
-  '/post/2',
-  '/post/3',
-  '/post/4',
-  '/post/5',
-  '/post/6',
-  '/post/7',
-  '/post/8',
-];
+const paths = ['/', ...[...Array(9)].map((_, idx) => `/post/${idx + 1}`)];
 
 module.exports = {
   mode: 'development',
@@ -32,7 +22,6 @@ module.exports = {
             target: 'esnext',
           },
         },
-
         exclude: /node_modules/,
       },
       {

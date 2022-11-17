@@ -9,7 +9,7 @@ import { parsePost } from '@/utils/post';
 import styles from './index.scss';
 import Utterances from '@/components/Utterances';
 
-function Blog() {
+function Post() {
   const { id } = useParams();
 
   const [title, setTitle] = useState('');
@@ -29,16 +29,16 @@ function Blog() {
   }, [id]);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <Header title={title} date={date} />
-      <div
+      <article
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: content }}
       />
       <Utterances />
       <Navigator id={Number(id)} />
-    </div>
+    </main>
   );
 }
 
-export default Blog;
+export default Post;

@@ -23,13 +23,19 @@ function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <Profile />
       <hr />
-      {posts.sort(idDesc).map(({ id, title, date }) => (
-        <WritingItem id={id} title={title} date={date} key={id} />
+      {posts.sort(idDesc).map(({ id, title, description, date }) => (
+        <WritingItem
+          id={id}
+          title={title}
+          description={description}
+          date={date}
+          key={id}
+        />
       ))}
-    </div>
+    </main>
   );
 }
 

@@ -26,14 +26,16 @@
   }
 
   pre {
+    display: flex;
+    align-items: center;
+
     overflow-x: scroll;
 
     line-height: 1.5rem;
 
     background-color: #eee;
 
-    border: 1px solid #ddd;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 1rem;
 
     &::-webkit-scrollbar {
@@ -46,7 +48,7 @@
   }
 
   code {
-    background-color: lightgray;
+    background-color: #eee;
     color: $color-font-light;
 
     border-radius: 5px;
