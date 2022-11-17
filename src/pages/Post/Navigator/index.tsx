@@ -1,14 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import { postsLength } from '@/constants/data';
+import { Post } from '@/types/data';
 
 import styles from './index.scss';
 
-interface NavigatorProps {
-  id: number;
-}
-
-function Navigator({ id }: NavigatorProps) {
+function Navigator({ id }: Pick<Post, 'id'>) {
   const navigate = useNavigate();
 
   return (

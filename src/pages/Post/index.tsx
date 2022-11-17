@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 
 import Header from './Header';
 import Navigator from './Navigator';
+import Utterances from '@/components/Utterances';
 
 import { parsePost } from '@/utils/post';
 
 import styles from './index.scss';
-import Utterances from '@/components/Utterances';
+
+const minUnit = 2000;
 
 function Post() {
   const { id } = useParams();
@@ -30,7 +32,13 @@ function Post() {
 
   return (
     <main className={styles.container}>
-      <Header title={title} date={date} />
+      <Header
+        title={title}
+        date={date}
+        minutes={
+          content.length < minUnit ? 1 : Math.round(content.length / minUnit)
+        }
+      />
       <article
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: content }}
