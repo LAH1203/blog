@@ -6,20 +6,6 @@
   padding: 0 1rem;
 }
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-
-  font-size: 1.1rem;
-  font-weight: 700;
-
-  a {
-    cursor: pointer;
-  }
-}
-
 .photo {
   max-width: 8rem;
   min-width: 4rem;
@@ -32,14 +18,15 @@
 .description {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-
-  height: 80%;
-
-  padding: 1.5rem 0;
+  justify-content: center;
 }
 
-.github {
-  width: 2rem;
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: 1.2rem;
 }

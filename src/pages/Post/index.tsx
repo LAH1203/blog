@@ -31,7 +31,7 @@ function Post() {
   }, [id]);
 
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <Header
         title={title}
         date={date}
@@ -45,7 +45,7 @@ function Post() {
       />
       <Utterances />
       <Navigator id={Number(id)} />
-    </main>
+    </div>
   );
 }
 

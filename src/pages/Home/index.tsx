@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <Profile />
       <hr />
       {posts.sort(idDesc).map(({ id, title, description, date }) => (
@@ -35,7 +35,7 @@ function Home() {
           key={id}
         />
       ))}
-    </main>
+    </div>
   );
 }
 
