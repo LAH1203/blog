@@ -1,7 +1,7 @@
 import { postsLength } from '@/constants/data';
 import { Post } from '@/types/data';
 
-const parsePost = (id: Post['id'], post: string) => {
+const parsePost = (id: Post['id'], post: string): Post => {
   const [, postHeader, ...postContent] = post.split('<hr>');
   const [information, date] = postHeader.split('date: ');
   const [title, description] = information.split('description: ');
@@ -15,7 +15,7 @@ const parsePost = (id: Post['id'], post: string) => {
   };
 };
 
-const getAllPosts = () => {
+const getAllPosts = (): Promise<Post>[] => {
   return Array.from({ length: postsLength }, (_, i) => postsLength - i).map(
     id => {
       return import(`@/posts/${id}.md`).then(postModule =>
