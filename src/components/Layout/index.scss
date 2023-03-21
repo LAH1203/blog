@@ -24,15 +24,7 @@
   box-sizing: border-box;
   padding: 5rem 0 3rem;
 
-  background-color: $color-background-light;
-  color: $color-font-light;
-
-  transition: all 0.3s ease;
-
-  &.darkMode {
-    background-color: $color-background-dark;
-    color: $color-font-dark;
-  }
+  background-color: $BACKGROUND;
 
   * {
     max-width: 50rem;

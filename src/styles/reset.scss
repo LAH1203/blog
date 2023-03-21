@@ -101,8 +101,10 @@ section {
 body {
   line-height: 2rem;
 
-  font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard-Regular', 'Noto Sans KR', sans-serif;
   font-size: 1rem;
+
+  color: $FONT_BASIC;
 
   text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
   -webkit-text-size-adjust: antialiased;
@@ -112,8 +114,8 @@ body {
   text-rendering: optimizelegibility;
 
   ::selection {
-    background-color: $color-point-light-yellow;
-    color: black;
+    background-color: $FONT_LIGHTER;
+    color: $FONT_BOLDER;
   }
 }
 h1,
@@ -143,13 +145,13 @@ h4 {
 a {
   width: fit-content;
 
-  color: gray;
+  color: $FONT_BASIC;
   text-decoration: none;
 
   transition: color 0.5s ease;
 
   &:hover {
-    color: $color-point-ocean;
+    color: $FONT_BOLD;
   }
 }
 hr {

@@ -1,42 +1,20 @@
-import { useEffect, useState } from 'react';
-
-import Profile from './Profile';
-import WritingItem from './WritingItem';
-
-import { Post } from '@/types/data';
-import { idDesc } from '@/utils/compare';
-import { getAllPosts } from '@/utils/post';
+import Logo from '@/assets/big-logo.gif';
+import { Link } from 'react-router-dom';
 
 import styles from './index.scss';
 
-function Home() {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    setPosts([]);
-
-    getAllPosts().forEach(postPromise => {
-      postPromise.then(post => {
-        setPosts(prevPosts => [...prevPosts, post]);
-      });
-    });
-  }, []);
-
+const Home = () => {
   return (
     <div className={styles.container}>
-      <Profile />
-      <hr />
-      {posts.sort(idDesc).map(({ id, title, description, date }) => (
-        <WritingItem
-          id={id}
-          title={title}
-          description={description}
-          date={date}
-          key={id}
-        />
-      ))}
+      <img src={Logo} alt="로고" />
+      <div className={styles.wrapper}>
+        <Link to="/about">저에 대해 궁금하신가요?</Link>
+        <Link to="/posts">제가 쓴 글이에요.</Link>
+        <a href="https://github.com/LAH1203" target="_blank">
+          제 깃허브로 가실까요?
+        </a>
+      </div>
     </div>
   );
-}
-
+};
 export default Home;

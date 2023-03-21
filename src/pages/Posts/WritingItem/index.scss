@@ -5,20 +5,14 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  padding: 2rem 1.5rem;
+  padding: 0.2rem 1.5rem;
 
-  transition: transform 0.3s ease;
+  transition: border 0.3s ease;
 
   cursor: pointer;
 
   &:hover {
-    transform: scale3d(1.01, 1.01, 1);
-
-    .title {
-      color: $color-point-ocean;
-
-      transition: color 0.3s ease;
-    }
+    border-left: 4px solid $FONT_BOLD;
   }
 }
 

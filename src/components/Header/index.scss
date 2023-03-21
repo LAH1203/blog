@@ -11,14 +11,7 @@
   box-sizing: border-box;
   padding: 0 1rem;
 
-  background: linear-gradient(
-    90deg,
-    #12c2e9cc 0%,
-    #c471edcc 50%,
-    #f64f59cc 100%
-  );
-
-  backdrop-filter: saturate(150%) blur(5px);
+  background: $BACKGROUND;
 }
 
 .logo-wrapper {
@@ -27,29 +20,16 @@
 }
 
 .logo {
-  width: 30px;
-  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  width: 90px;
 
   cursor: pointer;
 }
 
-.toggle {
+.nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 1rem;
 
-  width: 3.5rem;
-  height: 1.5rem;
-
-  box-sizing: border-box;
-  padding: 0 0.5rem;
-
-  background-color: $color-shadow;
-
-  border: 1px solid $color-point-pink;
-  border-radius: 30px;
-
-  transition: all 0.3s ease;
-
-  cursor: pointer;
+  list-style: none;
 }

@@ -1,10 +1,6 @@
-import { createRef, useContext, useLayoutEffect } from 'react';
-
-import { ModeContext } from '@/contexts';
+import { createRef, useLayoutEffect } from 'react';
 
 function Utterances() {
-  const { mode } = useContext(ModeContext);
-
   const containerRef = createRef<HTMLDivElement>();
 
   useLayoutEffect(() => {
@@ -14,7 +10,7 @@ function Utterances() {
       src: 'https://utteranc.es/client.js',
       repo: 'LAH1203/blog',
       'issue-term': 'pathname',
-      theme: mode === 'light' ? 'github-light' : 'github-dark',
+      theme: 'preferred-color-scheme',
       crossOrigin: 'anonymous',
       async: 'true',
     };

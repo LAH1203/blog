@@ -11,7 +11,7 @@ import styles from './index.scss';
 
 const minUnit = 2000;
 
-function Post() {
+const Post = () => {
   const { id } = useParams();
 
   const [title, setTitle] = useState('');
@@ -47,6 +47,6 @@ function Post() {
       <Navigator id={Number(id)} />
     </div>
   );
-}
+};
 
 export default Post;

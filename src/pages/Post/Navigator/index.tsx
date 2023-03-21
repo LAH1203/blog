@@ -1,12 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 
-import { postsLength } from '@/constants/data';
 import { Post } from '@/types/data';
+import usePost from '@/hooks/usePost';
 
 import styles from './index.scss';
 
-function Navigator({ id }: Pick<Post, 'id'>) {
+const Navigator = ({ id }: Pick<Post, 'id'>) => {
   const navigate = useNavigate();
+
+  const { getPostLength } = usePost();
 
   return (
     <div className={styles.navigator}>
@@ -14,10 +16,10 @@ function Navigator({ id }: Pick<Post, 'id'>) {
         {id > 1 ? 'Prev' : ''}
       </div>
       <div onClick={() => navigate(`/post/${id + 1}`)}>
-        {id < postsLength ? 'Next' : ''}
+        {id < getPostLength() ? 'Next' : ''}
       </div>
     </div>
   );
-}
+};
 
 export default Navigator;

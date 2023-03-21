@@ -1,5 +1,3 @@
-import Hits from '@/components/Hits';
-
 import calendar from '@/assets/calendar.svg';
 import { Post } from '@/types/data';
 
@@ -9,7 +7,7 @@ interface HeaderProps extends Pick<Post, 'title' | 'date'> {
   minutes: number;
 }
 
-function Header({ title, date, minutes }: HeaderProps) {
+const Header = ({ title, date, minutes }: HeaderProps) => {
   return (
     <section className={styles.header}>
       <div className={styles['main-container']}>
@@ -21,11 +19,10 @@ function Header({ title, date, minutes }: HeaderProps) {
       </div>
       <hr />
       <div className={styles.description}>
-        <Hits />
         <p className={styles.minute}>{minutes} min read</p>
       </div>
     </section>
   );
-}
+};
 
 export default Header;

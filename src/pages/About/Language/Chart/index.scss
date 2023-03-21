@@ -1,0 +1,27 @@
+.chart {
+  position: relative;
+
+  width: 200px;
+
+  circle {
+    cursor: pointer;
+  }
+}
+
+.description {
+  position: absolute;
+
+  &.react {
+    right: 0;
+  }
+
+  &.typescript {
+    top: 40%;
+    left: -35%;
+  }
+
+  &.HTMLCSSJS {
+    bottom: -5%;
+    right: 0;
+  }
+}

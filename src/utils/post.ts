@@ -1,4 +1,3 @@
-import { postsLength } from '@/constants/data';
 import { Post } from '@/types/data';
 
 const parsePost = (id: Post['id'], post: string): Post => {
@@ -15,14 +14,4 @@ const parsePost = (id: Post['id'], post: string): Post => {
   };
 };
 
-const getAllPosts = (): Promise<Post>[] => {
-  return Array.from({ length: postsLength }, (_, i) => postsLength - i).map(
-    id => {
-      return import(`@/posts/${id}.md`).then(postModule =>
-        parsePost(id, postModule.default),
-      );
-    },
-  );
-};
-
-export { parsePost, getAllPosts };
+export { parsePost };

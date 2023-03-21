@@ -5,7 +5,12 @@ import { Post } from '@/types/data';
 
 import styles from './index.scss';
 
-function WritingItem({ id, title, description, date }: Omit<Post, 'content'>) {
+const WritingItem = ({
+  id,
+  title,
+  description,
+  date,
+}: Omit<Post, 'content'>) => {
   const navigate = useNavigate();
 
   return (
@@ -15,12 +20,9 @@ function WritingItem({ id, title, description, date }: Omit<Post, 'content'>) {
     >
       <h2 className={styles.title}>{title}</h2>
       <p>{description}</p>
-      <p className={styles.date}>
-        <img src={calendar} />
-        {date}
-      </p>
+      <p className={styles.date}>{date}</p>
     </section>
   );
-}
+};
 
 export default WritingItem;

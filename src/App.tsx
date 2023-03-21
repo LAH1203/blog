@@ -2,25 +2,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
+import About from '@/pages/About';
+import Posts from '@/pages/Posts';
 import Post from '@/pages/Post';
-
-import { ModeContext } from '@/contexts';
-import { useMode } from '@/hooks/useMode';
+import NotFound from '@/pages/NotFound';
 
 function App() {
-  const { mode, toggleMode } = useMode();
-
   return (
-    <ModeContext.Provider value={{ mode, toggleMode }}>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/post/:id" element={<Post />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </ModeContext.Provider>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/post/:id" element={<Post />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
