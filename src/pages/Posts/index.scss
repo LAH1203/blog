@@ -36,6 +36,7 @@
     display: none;
   }
 
+  &.selected,
   &:hover {
     background-color: $FONT_BASIC;
   }

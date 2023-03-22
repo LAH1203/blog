@@ -11,3 +11,11 @@
     cursor: pointer;
   }
 }
+
+.arrow {
+  width: 2.5rem;
+
+  &.next {
+    transform: rotate(180deg);
+  }
+}

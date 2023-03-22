@@ -56,7 +56,9 @@ const Posts = () => {
       <div className={styles['category-container']}>
         {categories.map(category => (
           <p
-            className={styles.category}
+            className={`${styles.category} ${
+              selectedCategory === category ? styles.selected : ''
+            }`}
             onClick={findPosts(category)}
             key={category}
           >
