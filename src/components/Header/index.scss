@@ -2,8 +2,9 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 1rem;
 
   width: 100%;
   height: 100%;
@@ -12,24 +13,6 @@
   padding: 0 1rem;
 
   background: $BACKGROUND;
-}
-
-.logo-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  overflow: hidden;
-
-  width: 90px;
-
-  cursor: pointer;
-}
-
-.nav {
-  display: flex;
-  gap: 1rem;
 
   list-style: none;
 }

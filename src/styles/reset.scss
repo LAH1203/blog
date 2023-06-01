@@ -114,8 +114,7 @@ body {
   text-rendering: optimizelegibility;
 
   ::selection {
-    background-color: $FONT_LIGHTER;
-    color: $FONT_BOLDER;
+    background-color: $BEIGE_200;
   }
 }
 h1,
@@ -148,10 +147,10 @@ a {
   color: $FONT_BASIC;
   text-decoration: none;
 
-  transition: color 0.5s ease;
+  transition: all 0.5s ease;
 
   &:hover {
-    color: $FONT_BOLD;
+    color: $BEIGE_600;
   }
 }
 hr {

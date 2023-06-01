@@ -30,6 +30,14 @@ const Post = () => {
     });
   }, [id]);
 
+  useEffect(() => {
+    const titleEl = document.querySelector('title');
+
+    if (!titleEl) return;
+
+    titleEl.innerText = title;
+  }, [title]);
+
   return (
     <div className={styles.container}>
       <Header

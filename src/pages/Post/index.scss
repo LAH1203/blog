@@ -33,7 +33,7 @@
     line-height: 1.5rem;
 
     background-color: $CODE_BACKGROUND;
-    color: $FONT_BOLD;
+    color: $WHITE;
 
     border-radius: 8px;
     padding: 1rem;
@@ -48,8 +48,7 @@
   }
 
   code {
-    background-color: $CODE_BACKGROUND;
-    color: $FONT_BOLD;
+    background-color: $BEIGE_200;
 
     border-radius: 5px;
 
@@ -59,13 +58,13 @@
   }
 
   strong {
-    color: $FONT_BOLD;
+    color: $BEIGE_600;
 
     font-weight: 900;
   }
 
   em {
-    color: $FONT_BOLD;
+    color: $BEIGE_600;
 
     font-style: italic;
   }

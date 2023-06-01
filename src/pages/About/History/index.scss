@@ -3,15 +3,13 @@
 .component {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
 
-  width: 100%;
+  width: 80%;
 }
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
 
   width: 100%;
@@ -19,9 +17,9 @@
 
 .line {
   width: 0;
-  height: 10rem;
+  height: 9rem;
 
-  border: 0.8px solid $FONT_BOLD;
+  border: 0.8px solid $BEIGE_600;
 }
 
 .box {
@@ -50,10 +48,10 @@
   width: 8px;
   height: 8px;
 
-  border: 1px solid $FONT_BOLD;
+  border: 1px solid $BEIGE_600;
   border-radius: 50%;
 
-  background-color: $FONT_LIGHTER;
+  background-color: $BEIGE_300;
 }
 
 .date {

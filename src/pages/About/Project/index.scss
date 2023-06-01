@@ -1,11 +1,9 @@
 @import '@/styles/variables';
 
 .container {
-  width: 100%;
+  width: 80%;
 
   h2 {
-    text-align: center;
-
     margin-bottom: 2rem;
   }
 }
@@ -24,9 +22,8 @@
 .item {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
 
-  width: 80%;
+  width: 100%;
 }
 
 .name {
@@ -34,8 +31,12 @@
   align-items: center;
   gap: 1rem;
 
+  h3 {
+    font-size: 1.3rem;
+  }
+
   a {
-    height: 25px;
+    height: 24px;
 
     img {
       height: 100%;
@@ -48,18 +49,10 @@
   gap: 0.3rem;
 }
 
-.tech-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.tech {
+  color: $BEIGE_700;
 }
 
-.tech {
-  width: fit-content;
-
-  border-radius: 12px;
-  padding: 0 0.4rem;
-
-  background-color: $FONT_LIGHTER;
-  color: $FONT_BOLDER;
+.description {
+  margin-top: 1rem;
 }

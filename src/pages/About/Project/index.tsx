@@ -62,14 +62,8 @@ const Project = () => {
                   <img src={githubImg} alt="깃허브" />
                 </a>
               </div>
-              <div className={styles['tech-wrapper']}>
-                {techs.map(tech => (
-                  <p className={styles.tech} key={tech}>
-                    {tech}
-                  </p>
-                ))}
-              </div>
-              <p>{description}</p>
+              <div className={styles.tech}>{techs.join(', ')}</div>
+              <p className={styles.description}>{description}</p>
             </li>
           ),
         )}

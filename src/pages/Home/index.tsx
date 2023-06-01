@@ -1,20 +1,82 @@
-import Logo from '@/assets/big-logo.gif';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+import WritingItem from './WritingItem';
+
+import { posts as postData } from '@/constants/data';
+import { Post } from '@/types/data';
+import { idDesc } from '@/utils/compare';
+import usePost from '@/hooks/usePost';
 
 import styles from './index.scss';
 
+const categories = Object.keys(postData) as Array<keyof typeof postData>;
+
 const Home = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<
+    keyof typeof postData | ''
+  >('');
+
+  const { getAllPosts, getPostsInCategory } = usePost();
+
+  useEffect(() => {
+    resetPosts();
+  }, []);
+
+  const resetPosts = () => {
+    setPosts([]);
+    setSelectedCategory('');
+
+    getAllPosts().forEach(postPromise => {
+      postPromise.then(post => {
+        setPosts(prevPosts => [...prevPosts, post]);
+      });
+    });
+  };
+
+  const findPosts = (category: keyof typeof postData) => () => {
+    if (selectedCategory === category) {
+      resetPosts();
+
+      return;
+    }
+
+    setPosts([]);
+    setSelectedCategory(category);
+
+    getPostsInCategory(category).forEach(postPromise => {
+      postPromise.then(post => {
+        setPosts(prevPosts => [...prevPosts, post]);
+      });
+    });
+  };
+
   return (
     <div className={styles.container}>
-      <img src={Logo} alt="로고" />
-      <div className={styles.wrapper}>
-        <Link to="/about">저에 대해 궁금하신가요?</Link>
-        <Link to="/posts">제가 쓴 글이에요.</Link>
-        <a href="https://github.com/LAH1203" target="_blank">
-          제 깃허브로 가실까요?
-        </a>
+      <div className={styles['category-container']}>
+        {categories.map(category => (
+          <p
+            className={`${styles.category} ${
+              selectedCategory === category ? styles.selected : ''
+            }`}
+            onClick={findPosts(category)}
+            key={category}
+          >
+            {category}
+          </p>
+        ))}
       </div>
+      {posts.sort(idDesc).map(({ id, title, description, date }) => (
+        <WritingItem
+          id={id}
+          title={title}
+          description={description}
+          date={date}
+          key={id}
+        />
+      ))}
     </div>
   );
 };
+
 export default Home;
