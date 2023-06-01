@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Header from './Header';
-import Navigator from './Navigator';
 import Utterances from '@/components/Utterances';
-
 import { parsePost } from '@/utils/post';
 
+import Header from './Header';
+import Navigator from './Navigator';
 import styles from './index.scss';
 
 const minUnit = 2000;
