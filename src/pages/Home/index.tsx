@@ -5,7 +5,7 @@ import WritingItem from './WritingItem';
 import { posts as postData } from '@/constants/data';
 import { Post } from '@/types/data';
 import { idDesc } from '@/utils/compare';
-import usePost from '@/hooks/usePost';
+import { getAllPosts, getPostsInCategory } from '@/utils/post';
 
 import styles from './index.scss';
 
@@ -16,8 +16,6 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState<
     keyof typeof postData | ''
   >('');
-
-  const { getAllPosts, getPostsInCategory } = usePost();
 
   useEffect(() => {
     resetPosts();

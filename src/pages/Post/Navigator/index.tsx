@@ -2,14 +2,12 @@ import { useNavigate } from 'react-router-dom';
 
 import arrow from '@/assets/arrow.svg';
 import { Post } from '@/types/data';
-import usePost from '@/hooks/usePost';
+import { getPostLength } from '@/utils/post';
 
 import styles from './index.scss';
 
 const Navigator = ({ id }: Pick<Post, 'id'>) => {
   const navigate = useNavigate();
-
-  const { getPostLength } = usePost();
 
   return (
     <div className={styles.navigator}>

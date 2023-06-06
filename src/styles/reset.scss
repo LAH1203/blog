@@ -1,4 +1,4 @@
-@import './font.scss', 'variables.scss';
+@import './font.scss', './variables.scss';
 
 html,
 body,
@@ -104,7 +104,7 @@ body {
   font-family: 'Pretendard-Regular', 'Noto Sans KR', sans-serif;
   font-size: 1rem;
 
-  color: $FONT_BASIC;
+  color: $BLACK;
 
   text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
   -webkit-text-size-adjust: antialiased;
@@ -144,7 +144,7 @@ h4 {
 a {
   width: fit-content;
 
-  color: $FONT_BASIC;
+  color: $BLACK;
   text-decoration: none;
 
   transition: all 0.5s ease;

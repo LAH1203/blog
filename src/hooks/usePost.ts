@@ -1,39 +1,64 @@
-import { posts } from '@/constants/data';
-import { Post } from '@/types/data';
+import { useEffect, useState } from 'react';
+
+import styles from '@/pages/Post/index.scss';
 import { parsePost } from '@/utils/post';
+import { Post } from '@/types/data';
 
-const usePost = () => {
-  const getPostLength = () => {
-    return (Object.keys(posts) as Array<keyof typeof posts>).reduce(
-      (length, category) => length + posts[category].length,
-      0,
-    );
-  };
+import useSnackbar from './useSnackbar';
 
-  const getAllPosts = (): Promise<Post>[] => {
-    const postLength = getPostLength();
+type usePostProps = {
+  id: Pick<Post, 'id'>;
+} & ReturnType<typeof useSnackbar>;
 
-    return Array.from({ length: postLength }, (_, i) => postLength - i).map(
-      id =>
-        import(`@/posts/${id}.md`).then(postModule =>
-          parsePost(id, postModule.default),
-        ),
-    );
-  };
+const usePost = ({ id, isSnackbarShowing, showSnackbar }: usePostProps) => {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [date, setDate] = useState('');
 
-  const getPostsInCategory = (
-    category: keyof typeof posts,
-  ): Promise<Post>[] => {
-    const postIds = posts[category];
+  useEffect(() => {
+    window.scroll(0, 0);
 
-    return postIds.map(id =>
-      import(`@/posts/${id}.md`).then(postModule =>
-        parsePost(id, postModule.default),
-      ),
-    );
-  };
+    import(`@/posts/${id}.md`).then(postModule => {
+      const post = parsePost(Number(id), postModule.default);
 
-  return { getPostLength, getAllPosts, getPostsInCategory };
+      setTitle(post.title);
+      setDate(post.date);
+      setContent(post.content);
+    });
+  }, [id]);
+
+  useEffect(() => {
+    const titleEl = document.querySelector('title');
+
+    if (!titleEl) return;
+
+    titleEl.innerText = title;
+  }, [title]);
+
+  useEffect(() => {
+    const codes = document.querySelectorAll('code');
+
+    codes.forEach(code => {
+      const button = document.createElement('button');
+
+      button.innerText = 'copy';
+      button.type = 'button';
+      button.className = styles['copy-button'];
+      button.addEventListener('click', () => {
+        const codeContent = code.innerText.split('\n').slice(0, -2).join('\n');
+
+        navigator.clipboard.writeText(codeContent);
+
+        if (isSnackbarShowing) return;
+
+        showSnackbar();
+      });
+
+      code.appendChild(button);
+    });
+  }, [content]);
+
+  return { title, content, date };
 };
 
 export default usePost;

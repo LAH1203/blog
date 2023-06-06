@@ -1,0 +1,34 @@
+@import '@/styles/variables', '@/styles/mixin';
+
+@include keyframe(show) {
+  0% {
+    transform: translateX(100%);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.container {
+  position: fixed;
+  top: 3rem;
+  right: 0;
+
+  border-radius: 4px;
+  padding: 0.5rem 2rem;
+
+  background-color: $BEIGE_700_OP;
+  color: $WHITE;
+
+  transform: translateX(100%);
+
+  &.show {
+    @include animation(0s, 2s, show, forwards);
+  }
+}
