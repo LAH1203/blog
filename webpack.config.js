@@ -6,7 +6,7 @@ const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const hljs = require('highlight.js');
 const path = require('path');
 
-const paths = [...Array(14)].map((_, idx) => {
+const paths = [...Array(15)].map((_, idx) => {
   return {
     path: `/post/${idx + 1}`,
     changefreq: 'daily',

@@ -1,5 +1,5 @@
 const posts = {
-  javascript: [10, 11, 12],
+  javascript: [10, 11, 12, 15],
   typescript: [4],
   project: [14],
   web: [13],
