@@ -1,7 +1,7 @@
 const posts = {
-  javascript: [10, 11, 12, 15],
+  javascript: [10, 11, 12],
   typescript: [4],
-  project: [14],
+  project: [14, 15],
   web: [13],
   css: [9],
   config: [2, 5, 6, 7],
