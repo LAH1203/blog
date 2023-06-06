@@ -93,4 +93,34 @@
 
     font-style: italic;
   }
+
+  table {
+    thead {
+      background-color: $BEIGE_500;
+      color: $WHITE;
+
+      font-weight: 600;
+
+      th {
+        padding: 0.4rem;
+      }
+
+      * {
+        text-align: center;
+      }
+    }
+    tbody {
+      tr {
+        border-top: 0.6px solid $BEIGE_500;
+      }
+
+      td {
+        padding: 1rem;
+
+        &:not(:last-of-type) {
+          border-right: 0.6px solid $BEIGE_500;
+        }
+      }
+    }
+  }
 }
