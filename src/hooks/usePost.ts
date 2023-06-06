@@ -6,9 +6,7 @@ import { Post } from '@/types/data';
 
 import useSnackbar from './useSnackbar';
 
-type usePostProps = {
-  id: Pick<Post, 'id'>;
-} & ReturnType<typeof useSnackbar>;
+type usePostProps = Pick<Post, 'id'> & ReturnType<typeof useSnackbar>;
 
 const usePost = ({ id, isSnackbarShowing, showSnackbar }: usePostProps) => {
   const [title, setTitle] = useState('');
@@ -36,7 +34,7 @@ const usePost = ({ id, isSnackbarShowing, showSnackbar }: usePostProps) => {
   }, [title]);
 
   useEffect(() => {
-    const codes = document.querySelectorAll('code');
+    const codes = document.querySelectorAll<HTMLElement>('pre code');
 
     codes.forEach(code => {
       const button = document.createElement('button');
