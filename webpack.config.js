@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 const hljs = require('highlight.js');
@@ -104,6 +105,7 @@ module.exports = {
         skipgzip: true,
       },
     }),
+    new RobotstxtPlugin({}),
   ],
   devServer: {
     historyApiFallback: true,

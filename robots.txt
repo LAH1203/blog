@@ -1,7 +1,4 @@
 User-agent: *
-Disallow: /
-
-User-agent: Googlebot
 Allow : /
 
 Sitemap: https://lah1203.netlify.app/sitemap.xml
