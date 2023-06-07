@@ -126,4 +126,11 @@
       }
     }
   }
+
+  blockquote {
+    background-color: $BEIGE_100;
+
+    border-left: 8px solid $BEIGE_500;
+    padding: 0.5rem 1rem;
+  }
 }
