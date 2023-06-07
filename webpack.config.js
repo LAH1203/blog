@@ -1,7 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
-const RobotstxtPlugin = require('robotstxt-webpack-plugin');
+// const RobotstxtPlugin = require('robotstxt-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 const hljs = require('highlight.js');
@@ -105,7 +106,18 @@ module.exports = {
         skipgzip: true,
       },
     }),
-    new RobotstxtPlugin({}),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: '.',
+          globOptions: {
+            ignore: [path.resolve(__dirname, './public/index.html')],
+          },
+        },
+      ],
+    }),
+    // new RobotstxtPlugin(),
   ],
   devServer: {
     historyApiFallback: true,
