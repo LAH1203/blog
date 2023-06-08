@@ -1,8 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
-
 const hljs = require('highlight.js');
 const path = require('path');
 
@@ -13,6 +13,7 @@ const paths = [...Array(16)].map((_, idx) => {
     priority: 0.5,
   };
 });
+const options = {};
 
 module.exports = {
   mode: 'development',
@@ -104,6 +105,7 @@ module.exports = {
         skipgzip: true,
       },
     }),
+    new RobotstxtPlugin(options),
   ],
   devServer: {
     historyApiFallback: true,
