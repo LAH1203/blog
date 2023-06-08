@@ -5,7 +5,7 @@ const posts = {
   project: [14, 15],
   web: [13],
   css: [9],
-  config: [2, 5, 6, 7, 18],
+  config: [2, 5, 6, 7, 17],
   recoil: [8],
   'react markdown': [1],
   postman: [3],
