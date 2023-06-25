@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 
 import Snackbar from '@/components/Snackbar';
-import Utterances from '@/components/Utterances';
 import useSnackbar from '@/hooks/useSnackbar';
 import usePost from '@/hooks/usePost';
 
 import Header from './Header';
 import Navigator from './Navigator';
+import Utterances from './Utterances';
 import styles from './index.scss';
 
 const minUnit = 2000;

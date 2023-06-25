@@ -1,7 +1,7 @@
-import { createRef, useLayoutEffect } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 function Utterances() {
-  const containerRef = createRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const utterances = document.createElement('script');
@@ -19,7 +19,7 @@ function Utterances() {
       utterances.setAttribute(key, value);
     });
 
-    containerRef.current!.appendChild(utterances);
+    containerRef.current?.appendChild(utterances);
   }, []);
 
   return <div ref={containerRef} />;
