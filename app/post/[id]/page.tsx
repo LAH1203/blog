@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-
 import readingTime from 'reading-time';
 
 import Article from '@/components/Post/Article';
