@@ -1,8 +1,9 @@
+import dynamic from 'next/dynamic';
+
 import readingTime from 'reading-time';
 
 import Article from '@/components/Post/Article';
 import { readPost } from '@/utils/post';
-import dynamic from 'next/dynamic';
 
 const Giscus = dynamic(() => import('@/components/Post/Giscus'), {
   ssr: false,
