@@ -3,6 +3,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 
 import fs from 'fs';
+import path from 'path';
 
 import { Post, PostMetadata } from '@/types/data';
 
@@ -21,16 +22,23 @@ const getMetadata = (
 const readCategoryPostsMetadata = (
   category: Post['category'],
 ): PostMetadata[] => {
-  return fs.readdirSync(`/posts/${category}`).map(fileName => {
-    const post = fs.readFileSync(`/posts/${category}/${fileName}`, 'utf-8');
-    const id = Number(fileName.split('.md')[0]);
+  return fs
+    .readdirSync(path.resolve(process.cwd(), 'public', 'posts', category))
+    .map(fileName => {
+      const post = fs.readFileSync(
+        path.resolve(process.cwd(), 'public', 'posts', category, fileName),
+        'utf-8',
+      );
+      const id = Number(fileName.split('.md')[0]);
 
-    return getMetadata(id, category, post);
-  });
+      return getMetadata(id, category, post);
+    });
 };
 
 const readAllPostsMetadata = (): PostMetadata[] => {
-  const categories: string[] = fs.readdirSync('/posts');
+  const categories: string[] = fs.readdirSync(
+    path.resolve(process.cwd(), 'public', 'posts'),
+  );
 
   return categories.reduce<PostMetadata[]>((posts, category) => {
     const files: PostMetadata[] = readCategoryPostsMetadata(category);
@@ -47,7 +55,10 @@ const getPostContent = async (
   id: Post['id'],
   category: Post['category'],
 ): Promise<string> => {
-  const post = fs.readFileSync(`/posts/${category}/${id}.md`, 'utf-8');
+  const post = fs.readFileSync(
+    path.resolve(process.cwd(), 'public', 'posts', category, `${id}.md`),
+    'utf-8',
+  );
   const { content: contentStr } = matter(post);
 
   const content = await remark().use(html).process(contentStr);

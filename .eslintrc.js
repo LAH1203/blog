@@ -12,7 +12,7 @@ module.exports = {
   rules: {
     'import/no-unresolved': 'off',
     'import/order': [
-      'error',
+      'warn',
       {
         groups: [
           'external',
@@ -27,6 +27,11 @@ module.exports = {
             pattern: 'react',
             group: 'external',
             position: 'before',
+          },
+          {
+            pattern: 'next/*',
+            group: 'external',
+            position: 'after',
           },
           {
             pattern: '@/*',

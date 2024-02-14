@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import fs from 'fs';
+import path from 'path';
 
 import WritingItem from '@/components/Home/WritingItem';
 import { PostMetadata } from '@/types/data';
@@ -14,7 +15,9 @@ interface HomeProps {
 const Home = ({ searchParams }: HomeProps) => {
   const selectedCategory = searchParams?.category || '';
 
-  const categories: string[] = fs.readdirSync('/posts');
+  const categories: string[] = fs.readdirSync(
+    path.resolve(process.cwd(), 'public', 'posts'),
+  );
   const posts: PostMetadata[] = categories.includes(selectedCategory)
     ? readCategoryPostsMetadata(selectedCategory)
     : readAllPostsMetadata();

@@ -1,5 +1,6 @@
-import dynamic from 'next/dynamic';
 import readingTime from 'reading-time';
+
+import dynamic from 'next/dynamic';
 
 import Article from '@/components/Post/Article';
 import { readPost } from '@/utils/post';
