@@ -14,7 +14,7 @@ interface HomeProps {
 const Home = ({ searchParams }: HomeProps) => {
   const selectedCategory = searchParams?.category || '';
 
-  const categories: string[] = fs.readdirSync('public/posts');
+  const categories: string[] = fs.readdirSync('/posts');
   const posts: PostMetadata[] = categories.includes(selectedCategory)
     ? readCategoryPostsMetadata(selectedCategory)
     : readAllPostsMetadata();
