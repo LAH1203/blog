@@ -1,6 +1,6 @@
-import { Post } from '@/types/data';
+import { PostMetadata } from '@/types/data';
 
-const idDesc = (a: Post, b: Post): -1 | 0 | 1 => {
+const idDesc = (a: PostMetadata, b: PostMetadata): -1 | 0 | 1 => {
   if (a.id < b.id) return 1;
   if (a.id > b.id) return -1;
 
