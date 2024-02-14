@@ -1,11 +1,10 @@
-import Link from 'next/link';
-
 import fs from 'fs';
 
 import WritingItem from '@/components/Home/WritingItem';
 import { PostMetadata } from '@/types/data';
 import { idDesc } from '@/utils/compare';
 import { readAllPostsMetadata, readCategoryPostsMetadata } from '@/utils/post';
+import Link from 'next/link';
 
 interface HomeProps {
   searchParams?: { category?: string };

@@ -1,6 +1,5 @@
-import Link from 'next/link';
-
 import { PostMetadata } from '@/types/data';
+import Link from 'next/link';
 
 const WritingItem = ({
   id,
