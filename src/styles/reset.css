@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './font.css';
+
+@layer base {
+  body {
+    line-height: 2rem;
+
+    font-family: 'Pretendard-Regular', 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+
+    color: $BLACK;
+
+    text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
+    -webkit-text-size-adjust: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+  }
+  ::selection {
+    background-color: #ddd6cf;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+    line-height: 2.7rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+  a {
+    width: fit-content;
+
+    color: black;
+    text-decoration: none;
+
+    transition: all 0.4s ease;
+  }
+  a:hover {
+    color: #85776b;
+  }
+  hr {
+    width: 97%;
+    height: 0.5px;
+
+    background-color: lightgray;
+    border: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  ul {
+    margin: 0;
+    padding-left: 1rem;
+
+    list-style-type: square;
+  }
+  details {
+    width: fit-content;
+  }
+  details > summary {
+    cursor: pointer;
+  }
+}

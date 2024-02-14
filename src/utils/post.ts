@@ -1,45 +1,75 @@
-import { posts } from '@/constants/data';
-import { Post } from '@/types/data';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 
-const getPostLength = () => {
-  return (Object.keys(posts) as Array<keyof typeof posts>).reduce(
-    (length, category) => length + posts[category].length,
-    0,
-  );
+import fs from 'fs';
+
+import { Post, PostMetadata } from '@/types/data';
+
+type Metadata = Omit<PostMetadata, 'id' | 'category'>;
+
+const getMetadata = (
+  id: Post['id'],
+  category: string,
+  postContent: string,
+): PostMetadata => {
+  const metadata: Metadata = matter(postContent).data as Metadata;
+
+  return { id, category, ...metadata };
 };
 
-const getAllPosts = (): Promise<Post>[] => {
-  const postLength = getPostLength();
+const readCategoryPostsMetadata = (
+  category: Post['category'],
+): PostMetadata[] => {
+  return fs.readdirSync(`Public/posts/${category}`).map(fileName => {
+    const post = fs.readFileSync(
+      `Public/posts/${category}/${fileName}`,
+      'utf-8',
+    );
+    const id = Number(fileName.split('.md')[0]);
 
-  return Array.from({ length: postLength }, (_, i) => postLength - i).map(id =>
-    import(`@/posts/${id}.md`).then(postModule =>
-      parsePost(id, postModule.default),
-    ),
-  );
+    return getMetadata(id, category, post);
+  });
 };
 
-const getPostsInCategory = (category: keyof typeof posts): Promise<Post>[] => {
-  const postIds = posts[category];
+const readAllPostsMetadata = (): PostMetadata[] => {
+  const categories: string[] = fs.readdirSync('Public/posts');
 
-  return postIds.map(id =>
-    import(`@/posts/${id}.md`).then(postModule =>
-      parsePost(id, postModule.default),
-    ),
-  );
+  return categories.reduce<PostMetadata[]>((posts, category) => {
+    const files: PostMetadata[] = readCategoryPostsMetadata(category);
+
+    return [...posts, ...files];
+  }, []);
 };
 
-const parsePost = (id: Post['id'], post: string): Post => {
-  const [, postHeader, ...postContent] = post.split('<hr>');
-  const [information, date] = postHeader.split('date: ');
-  const [title, description] = information.split('description: ');
+const getPostMetadata = (id: Post['id']): PostMetadata | undefined => {
+  return readAllPostsMetadata().find(metadata => metadata.id === id);
+};
+
+const getPostContent = async (
+  id: Post['id'],
+  category: Post['category'],
+): Promise<string> => {
+  const post = fs.readFileSync(`Public/posts/${category}/${id}.md`, 'utf-8');
+  const { content: contentStr } = matter(post);
+
+  const content = await remark().use(html).process(contentStr);
+
+  return content.toString();
+};
+
+const readPost = async (
+  id: Post['id'],
+): Promise<{ metadata: Metadata; content: string } | ''> => {
+  const postMetadata = getPostMetadata(id);
+  if (!postMetadata) return '';
+
+  const { category } = postMetadata;
 
   return {
-    id,
-    title: title.split('<p>title: ')[1],
-    description,
-    date: date.replace('date: ', '').replace('</p>', ''),
-    content: postContent.join('<hr>'),
+    metadata: postMetadata,
+    content: await getPostContent(id, category),
   };
 };
 
-export { getPostLength, getAllPosts, getPostsInCategory, parsePost };
+export { readCategoryPostsMetadata, readAllPostsMetadata, readPost };
