@@ -21,9 +21,9 @@ const getMetadata = (
 const readCategoryPostsMetadata = (
   category: Post['category'],
 ): PostMetadata[] => {
-  return fs.readdirSync(`Public/posts/${category}`).map(fileName => {
+  return fs.readdirSync(`public/posts/${category}`).map(fileName => {
     const post = fs.readFileSync(
-      `Public/posts/${category}/${fileName}`,
+      `public/posts/${category}/${fileName}`,
       'utf-8',
     );
     const id = Number(fileName.split('.md')[0]);
@@ -33,7 +33,7 @@ const readCategoryPostsMetadata = (
 };
 
 const readAllPostsMetadata = (): PostMetadata[] => {
-  const categories: string[] = fs.readdirSync('Public/posts');
+  const categories: string[] = fs.readdirSync('public/posts');
 
   return categories.reduce<PostMetadata[]>((posts, category) => {
     const files: PostMetadata[] = readCategoryPostsMetadata(category);
@@ -50,7 +50,7 @@ const getPostContent = async (
   id: Post['id'],
   category: Post['category'],
 ): Promise<string> => {
-  const post = fs.readFileSync(`Public/posts/${category}/${id}.md`, 'utf-8');
+  const post = fs.readFileSync(`public/posts/${category}/${id}.md`, 'utf-8');
   const { content: contentStr } = matter(post);
 
   const content = await remark().use(html).process(contentStr);
