@@ -31,7 +31,7 @@ export default function RootLayout({
           'flex justify-center items-center h-dvh w-dvw',
         )}
       >
-        <div className="relative size-[90%]">
+        <div className="relative w-[90%] h-full">
           <Sidebar />
           <div className="absolute left-[210px] top-0 h-full w-[calc(100%-194px)]">{children}</div>
         </div>
