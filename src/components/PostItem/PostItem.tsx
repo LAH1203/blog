@@ -6,7 +6,7 @@ interface PostItemProps {
 
 const PostItem = ({ item }: PostItemProps) => {
   return (
-    <a href={`/post/${item.category}/${item.fileName}`}>
+    <a href={`/post/${item.category}/${item.fileName}`} className="h-fit">
       <li className="flex w-full flex-col gap-12 rounded-md border-[0.5px] border-[#DFE9DD] bg-[#F6F9F6] p-6 transition-all duration-200 hover:scale-[1.01]">
         <span className="font-medium text-[#4B5945]">{item.title}</span>
         <div className="flex justify-between text-xs">

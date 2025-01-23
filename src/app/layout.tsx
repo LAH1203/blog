@@ -25,10 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(`${pretendard.variable} antialiased`, 'relative h-dvh')}>
-        <Sidebar />
-        <div className="absolute left-[192px] top-0 h-full w-[calc(100dvw-192px)] p-4">
-          {children}
+      <body
+        className={cn(
+          `${pretendard.variable} antialiased`,
+          'flex justify-center items-center h-dvh w-dvw',
+        )}
+      >
+        <div className="relative size-[90%]">
+          <Sidebar />
+          <div className="absolute left-[210px] top-0 h-full w-[calc(100%-194px)]">{children}</div>
         </div>
       </body>
     </html>
