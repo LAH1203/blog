@@ -10,7 +10,7 @@ import { Post } from '@/types/post';
 import readMetadata from './readMetadata';
 
 const readPost = async (category: string, fileName: string): Promise<Post | null> => {
-  const { title, date } = readMetadata(fileName);
+  const metadata = readMetadata(category, fileName);
 
   try {
     const post = readFileSync(
@@ -22,11 +22,8 @@ const readPost = async (category: string, fileName: string): Promise<Post | null
     const content = await remark().use(html).process(contentStr);
 
     return {
-      title,
-      category,
       content: content.toString(),
-      date,
-      fileName,
+      ...metadata,
     };
   } catch {
     return null;

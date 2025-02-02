@@ -1,17 +1,28 @@
+import { readFileSync } from 'fs';
+import path from 'path';
+
+import matter from 'gray-matter';
+
 import { PostMetadata } from '@/types/post';
 
-const readMetadata = (fileName: PostMetadata['fileName']): Pick<PostMetadata, 'title' | 'date'> => {
-  const regex = /^(\d{4}-\d{2}-\d{2})-(.+)\.md$/;
-  const match = fileName.match(regex);
+type Metadata = Omit<PostMetadata, 'category' | 'fileName'>;
 
-  if (!match) return { title: '', date: new Date() };
+const readMetadata = (
+  category: PostMetadata['category'],
+  fileName: PostMetadata['fileName'],
+): PostMetadata => {
+  const post = readFileSync(
+    path.resolve(process.cwd(), 'public', 'posts', category, fileName),
+    'utf-8',
+  );
 
-  const [, dateString, rawTitle] = match!;
+  const metadata: Metadata = matter(post).data as Metadata;
 
-  const title = rawTitle.replace(/-/g, ' ');
-  const date = new Date(dateString);
-
-  return { title, date };
+  return {
+    category,
+    fileName,
+    ...metadata,
+  };
 };
 
 export default readMetadata;

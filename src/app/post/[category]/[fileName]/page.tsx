@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 
+import Article from '@/components/Article/Article';
 import readPost from '@/utils/readPost';
 
 const Post = async ({ params }: { params: { category: string; fileName: string } }) => {
@@ -15,8 +16,8 @@ const Post = async ({ params }: { params: { category: string; fileName: string }
   const { title, date, content } = post;
 
   return (
-    <div className="flex flex-col gap-8 px-8 pb-8">
-      <section className="flex flex-col gap-1 border-b border-[#B2C9AD] py-4">
+    <div className="flex flex-col gap-8 xs:px-8 px-2 pb-12">
+      <section className="flex flex-col gap-1 border-b border-[#B2C9AD] pb-4">
         <h1 className="text-xl font-medium leading-8">{title}</h1>
         <div className="flex items-center gap-2 text-sm">
           <span className="whitespace-nowrap text-[#4B5945]">{date.toLocaleDateString()}</span>
@@ -25,7 +26,7 @@ const Post = async ({ params }: { params: { category: string; fileName: string }
           </span>
         </div>
       </section>
-      <article dangerouslySetInnerHTML={{ __html: content }} className="text-sm" />
+      <Article content={content} />
     </div>
   );
 };

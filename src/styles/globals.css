@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './article.css';
 
 :root {
   --background: #ffffff;
@@ -24,4 +25,6 @@ body {
   --text-xxs--line-height: 0.75rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --breakpoint-xs: 30rem;
+  --breakpoint-xl-large: 90rem;
 }

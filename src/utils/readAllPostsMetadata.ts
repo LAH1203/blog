@@ -7,9 +7,9 @@ import readMetadata from './readMetadata';
 
 const readCategoryPostsMetadata = (category: PostMetadata['category']): PostMetadata[] => {
   return readdirSync(path.resolve(process.cwd(), 'public', 'posts', category)).map(fileName => {
-    const { title, date } = readMetadata(fileName);
+    const metadata = readMetadata(category, fileName);
 
-    return { category, date, title, fileName };
+    return metadata;
   });
 };
 

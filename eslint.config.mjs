@@ -62,7 +62,7 @@ export default [
   },
   { languageOptions: { globals: globals.browser } },
   js.configs.recommended,
-  ...tailwind.configs['flat/recommended'],
+  // ...tailwind.configs['flat/recommended'],
   ...compat.config({
     extends: ['next', 'next/core-web-vitals', 'next/typescript', 'plugin:import/recommended'],
   }),

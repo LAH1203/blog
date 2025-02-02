@@ -17,9 +17,9 @@ const Profile = () => {
       </div>
       <div className="flex items-center gap-2">
         {/* TODO: update resume url */}
-        <a href="https://github.com/LAH1203" target="_blank">
+        {/* <a href="https://github.com/LAH1203" target="_blank">
           <Image src="/images/resume.svg" alt="resume" width={18} height={18} />
-        </a>
+        </a> */}
         <a href="https://github.com/LAH1203" target="_blank">
           <Image src="/images/github.svg" alt="github" width={20} height={20} />
         </a>

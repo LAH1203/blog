@@ -1,0 +1,69 @@
+'use client';
+
+import cn from '@/utils/cn';
+import { useState } from 'react';
+import Profile from '../Sidebar/Profile';
+
+const Header = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleIsExpanded = (): void => {
+    setIsExpanded(prev => !prev);
+  };
+
+  return (
+    <div className="sticky top-0 left-0 w-full xs:hidden" suppressHydrationWarning>
+      <header
+        className={cn(
+          'px-2 w-full flex justify-end items-center z-10 h-12 transition-all duration-300',
+          isExpanded && 'bg-[#F6F9F6]',
+        )}
+      >
+        <div
+          className={cn(
+            'w-7 cursor-pointer',
+            !isExpanded && 'flex flex-col gap-[6px]',
+            isExpanded && 'relative',
+          )}
+          onClick={toggleIsExpanded}
+        >
+          <p
+            className={cn(
+              'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-300',
+              isExpanded && 'absolute top-0 left-0 rotate-45',
+            )}
+          />
+          <p
+            className={cn(
+              'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-300',
+              isExpanded && 'absolute top-0 left-0 rotate-135',
+            )}
+          />
+          <p
+            className={cn(
+              'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-300',
+              isExpanded && 'hidden',
+            )}
+          />
+        </div>
+      </header>
+      <div
+        className={cn(
+          'flex justify-center items-center w-full h-0 px-8 bg-[#F6F9F6] transition-all duration-300',
+          isExpanded && 'h-[calc(100dvh-3rem)]',
+        )}
+      >
+        <div
+          className={cn(
+            'w-full opacity-0 transition-all duration-300',
+            isExpanded && 'opacity-100 delay-300',
+          )}
+        >
+          <Profile />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
