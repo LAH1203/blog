@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'github.com',
+        pathname: '/user-attachments/assets/**',
       },
     ],
   },

@@ -19,6 +19,7 @@ const PostItem = ({ item }: PostItemProps) => {
             placeholder="blur"
             blurDataURL="/images/blur.webp"
             className="rounded-md object-cover"
+            sizes="100% 100px"
             fill
           />
         </div>
