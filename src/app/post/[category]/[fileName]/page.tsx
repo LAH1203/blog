@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Article from '@/components/Article/Article';
 import readPost from '@/utils/readPost';
 
-const Post = async ({ params }: { params: { category: string; fileName: string } }) => {
+const Post = async ({ params }: { params: Promise<{ category: string; fileName: string }> }) => {
   const metadata = await params;
   const category = decodeURIComponent(metadata.category);
   const fileName = decodeURIComponent(metadata.fileName);
