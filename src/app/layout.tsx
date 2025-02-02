@@ -35,7 +35,7 @@ export default function RootLayout({
         <Header />
         <div className="relative xs:w-[90%] w-full h-full overflow-x-hidden overflow-y-auto">
           <Sidebar />
-          <div className="absolute xs:left-[210px] left-0 top-0 flex justify-center items-center h-full xs:w-[calc(100%-194px)] w-full">
+          <div className="absolute xs:left-[210px] left-0 top-0 flex justify-center items-center h-full xs:w-[calc(100%-210px)] w-full">
             <div className="xs:h-[90%] h-full xs:w-full w-[90%]">{children}</div>
           </div>
         </div>

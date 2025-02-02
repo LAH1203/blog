@@ -102,4 +102,8 @@
     padding: 0.5rem 1rem;
     margin: 1rem 0;
   }
+
+  .hljs-copy-button[data-copied='true'] {
+    padding: 0 0.5rem;
+  }
 }

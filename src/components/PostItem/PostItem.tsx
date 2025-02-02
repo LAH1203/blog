@@ -18,7 +18,7 @@ const PostItem = ({ item }: PostItemProps) => {
             alt={`${item.title} thumbnail`}
             placeholder="blur"
             blurDataURL="/images/blur.webp"
-            className="rounded-md"
+            className="rounded-md object-cover"
             fill
           />
         </div>

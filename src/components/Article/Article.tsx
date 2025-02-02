@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 import hljs from 'highlight.js';
-import 'highlight.js/styles/stackoverflow-light.css';
+const CopyButtonPlugin = require('highlightjs-copy');
 
 interface ArticleProps {
   content: string;
@@ -14,6 +14,7 @@ const Article = ({ content }: ArticleProps) => {
     hljs.configure({
       languages: ['vim', 'js', 'jsx', 'ts', 'tsx', 'json', 'html', 'css', 'scss'],
     });
+    hljs.addPlugin(new CopyButtonPlugin());
     hljs.highlightAll();
   }, []);
 

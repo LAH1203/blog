@@ -13,16 +13,11 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 left-0 w-full xs:hidden" suppressHydrationWarning>
-      <header
-        className={cn(
-          'px-2 w-full flex justify-end items-center z-10 h-12 transition-all duration-300',
-          isExpanded && 'bg-[#F6F9F6]',
-        )}
-      >
+      <header className="px-2 w-full flex justify-end items-center z-10 h-12 bg-[#F6F9F6]">
         <div
           className={cn(
-            'w-7 cursor-pointer',
-            !isExpanded && 'flex flex-col gap-[6px]',
+            'w-7 h-7 cursor-pointer',
+            !isExpanded && 'flex flex-col justify-center gap-[6px]',
             isExpanded && 'relative',
           )}
           onClick={toggleIsExpanded}
@@ -30,13 +25,13 @@ const Header = () => {
           <p
             className={cn(
               'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-300',
-              isExpanded && 'absolute top-0 left-0 rotate-45',
+              isExpanded && 'absolute top-[50%] left-0 rotate-45',
             )}
           />
           <p
             className={cn(
               'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-300',
-              isExpanded && 'absolute top-0 left-0 rotate-135',
+              isExpanded && 'absolute top-[50%] left-0 rotate-135',
             )}
           />
           <p
