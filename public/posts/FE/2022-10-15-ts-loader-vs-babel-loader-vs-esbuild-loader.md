@@ -2,10 +2,10 @@
 title: ts-loader vs babel-loader vs esbuild-loader
 description: 환경설정 재밌네;
 date: 2022-10-15
-thumbnail: /images/blur.webp
+thumbnail: https://github.com/user-attachments/assets/ea4504f5-fe9e-4cab-8adf-105ce8e48de9
 ---
 
-최근 [모두모여라 프로젝트](https://www.moyeora.site/)를 진행하며 웹팩에 적용할 로더에 대해 많은 고민이 있었습니다. (2022년 기준)
+우아한테크코스에서 [모두모여라 프로젝트](https://github.com/woowacourse-teams/2022-momo)를 진행하며 웹팩에 적용할 로더에 대해 많은 고민이 있었습니다.
 
 대표적으로는 가장 많이 사용되는 `ts-loader`와 `babel-loader`가 있고, 최근에는 `esbuild-loader`라는 좀 더 빠른 로더가 등장했습니다. (esbuild-loader는 vite에서 사용할 정도로 핫한 로더라고 하더라고요!)
 
