@@ -2,7 +2,7 @@
 title: ts-loader vs babel-loader vs esbuild-loader
 description: 환경설정 재밌네;
 date: 2022-10-15
-thumbnail: /images/profile.jpg
+thumbnail: /images/blur.webp
 ---
 
 최근 [모두모여라 프로젝트](https://www.moyeora.site/)를 진행하며 웹팩에 적용할 로더에 대해 많은 고민이 있었습니다. (2022년 기준)
