@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 left-0 w-full xs:hidden" suppressHydrationWarning>
-      <header className="px-2 w-full flex justify-end items-center z-10 h-12 bg-[#F6F9F6]">
+      <header className="px-2 w-full flex justify-end items-center z-10 h-12 bg-[#E0EBE0]">
         <div
           className={cn(
             'w-7 h-7 cursor-pointer',
@@ -44,7 +44,7 @@ const Header = () => {
       </header>
       <div
         className={cn(
-          'flex justify-center items-center w-full h-0 px-8 bg-[#F6F9F6] transition-all duration-300',
+          'flex justify-center items-center w-full h-0 px-8 bg-[#E0EBE0] transition-all duration-300',
           isExpanded && 'h-[calc(100dvh-3rem)]',
         )}
       >
