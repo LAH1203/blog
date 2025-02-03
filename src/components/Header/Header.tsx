@@ -30,7 +30,7 @@ const Header = () => {
           />
           <p
             className={cn(
-              'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-300',
+              'w-full rounded-sm h-[1.5px] bg-[#4B5945] transition-all duration-600',
               isExpanded && 'absolute top-[50%] left-0 rotate-135',
             )}
           />
