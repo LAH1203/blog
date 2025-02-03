@@ -106,4 +106,9 @@
   .hljs-copy-button[data-copied='true'] {
     padding: 0 0.5rem;
   }
+
+  img,
+  video {
+    padding: 1rem 0;
+  }
 }

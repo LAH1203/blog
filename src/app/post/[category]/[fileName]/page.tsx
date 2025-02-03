@@ -9,7 +9,7 @@ import 'highlightjs-copy/dist/highlightjs-copy.min.css';
 const Post = async ({ params }: { params: Promise<{ category: string; fileName: string }> }) => {
   const metadata = await params;
   const category = decodeURIComponent(metadata.category);
-  const fileName = decodeURIComponent(metadata.fileName);
+  const fileName = `${decodeURIComponent(metadata.fileName)}.md`;
   const post = await readPost(category, fileName);
 
   if (!category || !fileName || !post) {

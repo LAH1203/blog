@@ -8,7 +8,7 @@ interface PostItemProps {
 const PostItem = ({ item }: PostItemProps) => {
   return (
     <a
-      href={`/post/${item.category}/${item.fileName}`}
+      href={`/post/${item.category}/${item.fileName.split('.')[0]}`}
       className="h-full xs:max-w-[430px] max-w-full w-full"
     >
       <li className="flex flex-col items-center w-full h-full gap-8 rounded-md border-[0.5px] border-[#DFE9DD] bg-[#F6F9F6] p-6 transition-all duration-200 hover:scale-[1.01]">
