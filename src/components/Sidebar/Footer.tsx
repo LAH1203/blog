@@ -1,3 +1,5 @@
+'use client';
+
 const Footer = () => {
   return (
     <footer className="text-xxs text-right text-[#4B5945] w-full">
