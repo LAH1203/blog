@@ -1,7 +1,10 @@
 'use client';
 
-import cn from '@/utils/cn';
 import { useState } from 'react';
+
+import cn from '@/utils/cn';
+
+import Logo from '../Sidebar/Logo';
 import Profile from '../Sidebar/Profile';
 
 const Header = () => {
@@ -44,10 +47,18 @@ const Header = () => {
       </header>
       <div
         className={cn(
-          'flex justify-center items-center w-full h-0 px-8 bg-[#E0EBE0] transition-all duration-300',
+          'flex justify-center items-center relative w-full h-0 px-8 bg-[#E0EBE0] transition-all duration-300',
           isExpanded && 'h-[calc(100dvh-3rem)]',
         )}
       >
+        <div
+          className={cn(
+            'absolute top-0 left-[50%] translate-x-[-50%] opacity-0 transition-all duration-300',
+            isExpanded && 'opacity-100 delay-300',
+          )}
+        >
+          <Logo onClick={toggleIsExpanded} />
+        </div>
         <div
           className={cn(
             'w-full opacity-0 transition-all duration-300',
