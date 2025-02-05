@@ -26,6 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CONTENT}
+        />
+      </head>
       <body
         className={cn(
           `${pretendard.variable} antialiased`,
