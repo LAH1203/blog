@@ -58,6 +58,7 @@ export const generateMetadata = async ({
       title: `${title} : 🐢`,
       description,
       locale: 'ko',
+      url: `https://lah1203.vercel.app/${metadata.category}/${metadata.fileName}`,
       images: [
         {
           url: thumbnail,
