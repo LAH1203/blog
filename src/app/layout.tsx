@@ -15,8 +15,21 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: '거북이로그',
   description: '프론트엔드 개발자 이아현의 블로그',
+  openGraph: {
+    title: '거북이로그',
+    description: '프론트엔드 개발자 이아현의 블로그',
+    images: [
+      {
+        url: 'https://github.com/user-attachments/assets/21af14de-59cb-4848-a058-5476e4bcb2b5',
+      },
+    ],
+  },
+  authors: {
+    url: 'https://github.com/LAH1203',
+    name: '이아현',
+  },
 };
 
 export default function RootLayout({

@@ -5,6 +5,8 @@ import readPost from '@/utils/readPost';
 
 import 'highlight.js/styles/stackoverflow-light.css';
 import 'highlightjs-copy/dist/highlightjs-copy.min.css';
+import readMetadata from '@/utils/readMetadata';
+import { Metadata } from 'next';
 
 const Post = async ({ params }: { params: Promise<{ category: string; fileName: string }> }) => {
   const metadata = await params;
@@ -32,6 +34,35 @@ const Post = async ({ params }: { params: Promise<{ category: string; fileName: 
       <Article content={content} />
     </div>
   );
+};
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ category: string; fileName: string }>;
+}): Promise<Metadata | null> => {
+  const metadata = await params;
+  const category = decodeURIComponent(metadata.category);
+  const fileName = `${decodeURIComponent(metadata.fileName)}.md`;
+  const post = await readMetadata(category, fileName);
+
+  if (!category || !fileName || !post) return null;
+
+  const { title, description, thumbnail } = post;
+
+  return {
+    title: `${title} : 🐢`,
+    description,
+    openGraph: {
+      title: `${title} : 🐢`,
+      description,
+      images: [
+        {
+          url: thumbnail,
+        },
+      ],
+    },
+  };
 };
 
 export default Post;
