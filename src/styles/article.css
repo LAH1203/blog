@@ -50,6 +50,11 @@
   pre {
     @apply rounded-lg;
     @apply my-4;
+
+    code,
+    code * {
+      @apply text-xs;
+    }
   }
   :not(pre) > code {
     @apply bg-[#f6f6f6];
