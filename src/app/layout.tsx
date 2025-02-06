@@ -18,8 +18,10 @@ export const metadata: Metadata = {
   title: '거북이로그',
   description: '프론트엔드 개발자 이아현의 블로그',
   openGraph: {
+    type: 'website',
     title: '거북이로그',
     description: '프론트엔드 개발자 이아현의 블로그',
+    locale: 'ko',
     images: [
       {
         url: 'https://github.com/user-attachments/assets/21af14de-59cb-4848-a058-5476e4bcb2b5',

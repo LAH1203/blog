@@ -54,8 +54,10 @@ export const generateMetadata = async ({
     title: `${title} : 🐢`,
     description,
     openGraph: {
+      type: 'article',
       title: `${title} : 🐢`,
       description,
+      locale: 'ko',
       images: [
         {
           url: thumbnail,
