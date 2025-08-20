@@ -110,6 +110,28 @@
     @apply py-4;
   }
 
+  table {
+    @apply my-12;
+
+    thead {
+      @apply bg-[#B2C9AD];
+      @apply text-white;
+    }
+
+    th {
+      @apply py-2;
+      @apply rounded-xl;
+    }
+
+    tbody {
+      @apply bg-[#F6F9F6];
+    }
+
+    td {
+      @apply p-2;
+    }
+  }
+
   .hljs-copy-button[data-copied='true'] {
     @apply px-2;
   }
