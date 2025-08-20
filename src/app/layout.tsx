@@ -7,6 +7,7 @@ import Sidebar from '@/components/Sidebar/Sidebar';
 import cn from '@/utils/cn';
 
 import '../styles/globals.css';
+import MarkdownHMRClient from '@/components/MarkdownHMRClient/MarkdownHMRClient';
 
 const pretendard = localFont({
   src: '../../public/fonts/PretendardVariable.woff2',
@@ -61,6 +62,7 @@ export default function RootLayout({
             <div className="xs:h-[90%] h-full xs:w-full w-[90%]">{children}</div>
           </div>
         </div>
+        {process.env.NODE_ENV === 'development' && <MarkdownHMRClient />}
       </body>
     </html>
   );

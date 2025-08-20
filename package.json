@@ -30,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chokidar": "^4.0.3",
     "clsx": "^2.1.1",
     "eslint": "^9.18.0",
     "eslint-config-next": "15.1.4",
@@ -39,6 +40,7 @@
     "eslint-plugin-tailwindcss": "^3.18.2",
     "globals": "^15.14.0",
     "postcss": "^8",
+    "raw-loader": "^4.0.2",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.12",
     "typescript": "^5"
