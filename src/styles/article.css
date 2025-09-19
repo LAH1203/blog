@@ -110,25 +110,47 @@
     @apply py-4;
   }
 
+  figure {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-2;
+    @apply my-4;
+
+    figcaption {
+      @apply text-gray-400;
+    }
+  }
+
   table {
     @apply my-12;
+    @apply w-full;
+    @apply border-collapse;
+    @apply text-gray-700;
 
     thead {
-      @apply bg-[#B2C9AD];
-      @apply text-white;
+      @apply bg-[#f6f6f6];
+      @apply tracking-wider;
+      @apply text-center;
     }
 
     th {
-      @apply py-2;
-      @apply rounded-xl;
+      @apply px-4;
+      @apply py-3;
+      @apply font-medium;
     }
 
-    tbody {
-      @apply bg-[#F6F9F6];
+    tbody tr {
+      @apply border-b;
+      @apply last:border-0;
+      @apply border-[#e0e0e0];
     }
 
     td {
-      @apply p-2;
+      @apply px-4;
+      @apply py-3;
+      @apply border-r;
+      @apply last:border-r-0;
+      @apply border-[#e0e0e0];
     }
   }
 
