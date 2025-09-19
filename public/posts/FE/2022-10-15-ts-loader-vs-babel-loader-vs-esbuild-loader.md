@@ -2,7 +2,7 @@
 title: ts-loader vs babel-loader vs esbuild-loader
 description: 환경설정 재밌네;
 date: 2022-10-15
-thumbnail: https://github.com/user-attachments/assets/ea4504f5-fe9e-4cab-8adf-105ce8e48de9
+thumbnail: /thumbnails/webpack-loader.webp
 ---
 
 우아한테크코스에서 [모두모여라 프로젝트](https://github.com/woowacourse-teams/2022-momo)를 진행하며 웹팩에 적용할 로더에 대해 많은 고민이 있었습니다.

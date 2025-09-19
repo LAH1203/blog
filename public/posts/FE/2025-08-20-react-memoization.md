@@ -2,7 +2,7 @@
 title: 리액트 메모이제이션
 description: 무지성 메모이제이션은 이제 그만
 date: 2025-08-20
-thumbnail: https://github.com/user-attachments/assets/59996313-846b-488a-95b3-91ddc2ecea74
+thumbnail: /thumbnails/react-memoization.webp
 ---
 
 이전에 여러 사내 라이브러리를 제작할 때는 최적화가 중요했기 때문에 성능에 영향을 받을 수 있는 값이나 함수, 컴포넌트에는 메모이제이션을 많이 적용하고는 했습니다.
