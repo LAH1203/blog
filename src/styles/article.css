@@ -76,11 +76,17 @@
     @apply italic;
   }
 
-  ol,
   ul {
-    @apply m-4;
-    @apply list-inside;
+    @apply mx-4;
+    @apply my-2;
+    @apply list-outside;
     @apply list-disc;
+  }
+
+  ol {
+    @apply m-4;
+    @apply list-outside;
+    @apply list-decimal;
   }
 
   a {
