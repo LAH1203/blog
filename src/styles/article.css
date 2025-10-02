@@ -78,9 +78,12 @@
 
   ul {
     @apply mx-4;
-    @apply my-2;
     @apply list-outside;
     @apply list-disc;
+  }
+
+  ul:not(ul ul) {
+    @apply my-2;
   }
 
   ol {
@@ -186,5 +189,55 @@
         @apply font-light;
       }
     }
+  }
+
+  .callout,
+  [data-callout] {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-4;
+    @apply rounded-sm;
+    @apply p-4;
+    @apply my-4;
+    @apply border-l-4;
+    @apply bg-[#FAFAF7];
+    @apply border-[#E2E8C3];
+    @apply text-[#4b5945];
+  }
+
+  .callout-indicator {
+    @apply flex;
+    @apply items-center;
+    @apply gap-2;
+  }
+
+  .callout .callout-title,
+  [data-callout] .callout-title {
+    @apply font-semibold;
+  }
+
+  .callout-content {
+    @apply px-2;
+  }
+
+  .callout.warning,
+  [data-callout='warning'] {
+    @apply border-[#fbbf24];
+    @apply bg-[#fffbeb];
+    @apply text-[#7a5901];
+  }
+
+  .callout.error,
+  [data-callout='error'] {
+    @apply border-[#f87171];
+    @apply bg-[#fef2f2];
+    @apply text-[#721c24];
+  }
+
+  .callout.tip,
+  [data-callout='tip'] {
+    @apply border-[#b2c9ad];
+    @apply bg-[#f4f8f4];
+    @apply text-[#4b5945];
   }
 }

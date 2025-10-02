@@ -11,6 +11,8 @@ import readMetadata from './readMetadata';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import remarkDirective from 'remark-directive';
+import remarkCallout from '@microflash/remark-callout-directives';
 import rehypeStringify from 'rehype-stringify';
 
 const readPost = async (category: string, fileName: string): Promise<Post | null> => {
@@ -27,6 +29,8 @@ const readPost = async (category: string, fileName: string): Promise<Post | null
       .use(remarkBreaks)
       .use(remarkGfm)
       .use(remarkParse)
+      .use(remarkDirective)
+      .use(remarkCallout)
       .use(remarkRehype, { allowDangerousHtml: true })
       .use(rehypeStringify, { allowDangerousHtml: true })
       .processSync(contentStr);
