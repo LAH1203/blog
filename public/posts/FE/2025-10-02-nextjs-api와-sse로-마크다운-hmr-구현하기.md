@@ -280,7 +280,7 @@ const MarkdownHMRClient = () => {
       router.refresh();
     };
 
-    const eventSource = new EventSource('/api/md-hmr');
+    const eventSource = new EventSource('/api/설정한-route');
     eventSource.addEventListener('message', handleMessage);
 
     return () => {
