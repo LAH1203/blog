@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.date.toISOString().split('T')[0],
       changeFrequency: 'daily' as 'daily',
       priority: 0.7,
-      images: [post.thumbnail],
+      images: [post?.thumbnail ?? ''],
     })),
   ];
 }

@@ -26,5 +26,5 @@ body {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --breakpoint-xs: 30rem;
-  --breakpoint-xl-large: 90rem;
+  --breakpoint-xl-large: 85rem;
 }

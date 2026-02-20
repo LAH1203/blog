@@ -48,7 +48,7 @@ export const generateMetadata = async ({
 
   if (!category || !fileName || !post) return null;
 
-  const { title, description, thumbnail } = post;
+  const { title, description } = post;
 
   return {
     title: `${title} : 🐢`,
@@ -61,7 +61,7 @@ export const generateMetadata = async ({
       url: `https://lah1203.vercel.app/${metadata.category}/${metadata.fileName}`,
       images: [
         {
-          url: thumbnail,
+          url: post?.thumbnail ?? '',
         },
       ],
     },

@@ -9,30 +9,28 @@ const PostItem = ({ item }: PostItemProps) => {
   return (
     <a
       href={`/post/${item.category}/${item.fileName.split('.')[0]}`}
-      className="h-full xs:max-w-[430px] max-w-full w-full"
+      className="h-full xs:max-w-[320px] max-w-full w-full"
     >
-      <li className="flex flex-col items-center w-full h-full gap-8 rounded-md border-[0.5px] border-[#DFE9DD] bg-[#F6F9F6] p-6 transition-all duration-200 hover:scale-[1.01]">
+      <li className="flex flex-col items-center w-full h-full rounded-xl bg-white transition-all duration-200 hover:scale-[1.01] shadow-[0_0_12px_2px_rgba(0,0,0,0.05)] hover:shadow-[0_0_12px_4px_rgba(0,0,0,0.07)]">
         <div className="relative w-full h-[100px]">
-          <Image
-            src={item.thumbnail}
-            alt={`${item.title} thumbnail`}
-            placeholder="blur"
-            blurDataURL="/images/blur.webp"
-            className="rounded-md object-cover"
-            sizes="100% 100px"
-            fill
-          />
+          {item.thumbnail ? (
+            <Image
+              src={item.thumbnail}
+              alt={item.title}
+              className="rounded-t-xl object-cover bg-gray-200"
+              sizes="100% 100px"
+              fill
+            />
+          ) : (
+            <div className="flex items-center justify-center rounded-t-xl object-cover bg-[#F6F9F6] size-full text-6xl">
+              🐢
+            </div>
+          )}
         </div>
-        <div className="flex flex-col justify-between gap-4 w-full">
+        <div className="flex flex-col justify-between gap-4 w-full px-6 pt-4 pb-6">
           <div className="flex flex-col gap-1">
             <span className="font-medium text-[#4B5945]">{item.title}</span>
             <span className="text-[#4B5945] text-sm">{item.description}</span>
-          </div>
-          <div className="flex justify-between text-xs">
-            <span className="rounded-2xl bg-[#F0EAAC] px-2 py-1 font-medium text-white">
-              {item.category}
-            </span>
-            <span className="text-[#4B5945]">{item.date.toLocaleDateString()}</span>
           </div>
         </div>
       </li>

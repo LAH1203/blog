@@ -5,7 +5,7 @@ export interface Post {
   content: string;
   date: Date;
   fileName: string;
-  thumbnail: string;
+  thumbnail?: string;
 }
 
 export type PostMetadata = Omit<Post, 'content'>;

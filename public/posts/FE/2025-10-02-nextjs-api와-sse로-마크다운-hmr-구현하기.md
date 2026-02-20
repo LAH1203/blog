@@ -2,7 +2,6 @@
 title: Next.js API와 SSE로 마크다운 HMR 구현하기
 description: 이제 실시간으로 확인할 수 있다 !
 date: 2025-10-02
-thumbnail: /thumbnails/markdown-hmr.webp
 ---
 
 블로그를 마크다운 기반으로 개발하면서, 가장 많이 느꼈던 필요성이 있었습니다.
