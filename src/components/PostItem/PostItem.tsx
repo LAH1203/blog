@@ -1,7 +1,8 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import Image from 'next/image';
+import { useRef, useState } from 'react';
+
 import { PostMetadata } from '@/types/post';
 
 interface PostItemProps {
@@ -49,14 +50,6 @@ const PostItem = ({ item }: PostItemProps) => {
             : 'box-shadow 0.5s cubic-bezier(.16,1,.3,1), transform 0.5s cubic-bezier(.16,1,.3,1)',
         }}
       >
-        <div
-          className="pointer-events-none absolute inset-0 z-10 rounded-xl transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(500px circle at ${mouse.x * 100}% ${mouse.y * 100}%, rgba(75,89,69,0.06), transparent 50%)`,
-            opacity: hovered ? 1 : 0,
-          }}
-        />
-
         <div className="relative w-full h-[100px]">
           {item.thumbnail ? (
             <Image
