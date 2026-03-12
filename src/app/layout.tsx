@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 
 import localFont from 'next/font/local';
 
-import Sidebar from '@/components/Sidebar/Sidebar';
 import cn from '@/utils/cn';
 
 import '../styles/globals.css';
 import MarkdownHMRClient from '@/components/MarkdownHMRClient/MarkdownHMRClient';
-import MobileProfile from '@/components/MobileProfile/MobileProfile';
+import Profile from '@/components/Profile/Profile';
 
 const pretendard = localFont({
   src: '../../public/fonts/PretendardVariable.woff2',
@@ -42,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <head>
         <meta
           name="google-site-verification"
@@ -52,15 +51,16 @@ export default function RootLayout({
       <body
         className={cn(
           `${pretendard.variable} antialiased`,
-          'flex flex-col justify-center items-center h-dvh w-dvw',
+          'flex justify-center items-center h-dvh w-dvw px-8 py-8',
         )}
       >
-        <div className="xs:flex xs:gap-8 xs:relative xs:w-[90%] w-full h-full overflow-x-hidden overflow-y-auto">
-          <Sidebar />
-          <MobileProfile />
-          <div className="flex justify-center items-center h-full xs:w-[calc(100%-210px)] w-full">
-            <div className="xs:h-[90%] h-full xs:w-full w-[90%]">{children}</div>
-          </div>
+        <div className="flex flex-col items-center gap-8 max-w-[1024px] w-full h-full">
+          <Profile />
+          {children}
+          <footer className="text-xxs text-right text-[#4B5945] w-full pt-2 pb-8">
+            <p>Copyright 2022-{new Date().getFullYear()}.</p>
+            <p>All rights reserved by AhhyunLee.</p>
+          </footer>
         </div>
         {process.env.NODE_ENV === 'development' && <MarkdownHMRClient />}
       </body>
