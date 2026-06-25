@@ -6,15 +6,23 @@ import { PostMetadata } from '@/types/post';
 import readMetadata from './readMetadata';
 
 const readCategoryPostsMetadata = (category: PostMetadata['category']): PostMetadata[] => {
-  return readdirSync(path.resolve(process.cwd(), 'public', 'posts', category)).map(fileName => {
-    const metadata = readMetadata(category, fileName);
+  return readdirSync(path.resolve(process.cwd(), 'public', 'posts', category), {
+    withFileTypes: true,
+  })
+    .filter(dirent => dirent.isFile() && dirent.name.endsWith('.md'))
+    .map(dirent => {
+      const metadata = readMetadata(category, dirent.name);
 
-    return metadata;
-  });
+      return metadata;
+    });
 };
 
 const readAllPostsMetadata = (): PostMetadata[] => {
-  const categories: string[] = readdirSync(path.resolve(process.cwd(), 'public', 'posts'));
+  const categories: string[] = readdirSync(path.resolve(process.cwd(), 'public', 'posts'), {
+    withFileTypes: true,
+  })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
 
   return categories
     .reduce<PostMetadata[]>((posts, category) => {
